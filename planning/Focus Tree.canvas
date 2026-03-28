@@ -1,0 +1,16 @@
+{
+	"nodes":[
+		{"id":"033ee0cf0adee605","x":-400,"y":-320,"width":250,"height":60,"type":"text","text":"INITIAL"},
+		{"id":"ef39c8a0319663c1","x":-860,"y":-120,"width":250,"height":60,"type":"text","text":"Focus on our Home"},
+		{"id":"4e99b99b9eb23ff1","x":80,"y":-120,"width":250,"height":60,"type":"text","text":"Improve International Relationship"},
+		{"id":"a563d7f5864323f6","x":314,"y":96,"width":250,"height":60,"color":"1","type":"text","text":"Become Putins Bootlicker"},
+		{"id":"1b1c4d0419d16fd1","x":-150,"y":96,"width":250,"height":60,"color":"4","type":"text","text":"Stay strong with the EU"}
+	],
+	"edges":[
+		{"id":"5aa4cfb3bc0f508c","fromNode":"033ee0cf0adee605","fromSide":"bottom","toNode":"ef39c8a0319663c1","toSide":"top"},
+		{"id":"966042ea2a8864fb","fromNode":"033ee0cf0adee605","fromSide":"bottom","toNode":"4e99b99b9eb23ff1","toSide":"top"},
+		{"id":"3845702f9d7b8d07","fromNode":"4e99b99b9eb23ff1","fromSide":"bottom","toNode":"1b1c4d0419d16fd1","toSide":"top"},
+		{"id":"d32a0ad8d15a2ddf","fromNode":"4e99b99b9eb23ff1","fromSide":"bottom","toNode":"a563d7f5864323f6","toSide":"top"},
+		{"id":"df733125a65944c1","fromNode":"1b1c4d0419d16fd1","fromSide":"right","toNode":"a563d7f5864323f6","toSide":"left","fromEnd":"arrow"}
+	]
+}
