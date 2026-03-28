@@ -1,0 +1,17 @@
+spriteTypes = { 
+ 	SpriteType = {
+		name = "GFX_economy_ledger_button_global"
+		texturefile = "gfx/interface/economy_ledger_button_global.dds"	
+		noOfFrames = 2		
+	}
+ 	SpriteType = {
+		name = "GFX_economy_ledger_button_union"
+		texturefile = "gfx/interface/economy_ledger_button_union.dds"	
+		noOfFrames = 2		
+	}
+ 	SpriteType = {
+		name = "GFX_economy_ledger_button_faction"
+		texturefile = "gfx/interface/economy_ledger_button_faction.dds"	
+		noOfFrames = 2		
+	}
+}

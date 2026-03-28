@@ -1,0 +1,6872 @@
+focus_tree = {
+	id = GMA_old
+	country = {
+		factor = 0
+		
+	}
+	
+	focus = {
+		id = GMA_no_compromise_with_statists
+		icon = GFX_focus_GMA_No_Compromise_With_Statists
+		x = 17
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_political_power = 75
+			set_temp_variable = { 
+				var = legit_var_temp
+				value = 0.20
+			}
+			add_legit = yes
+		}
+	}
+	focus = {
+		id = GMA_Anti_Fascism_Focus
+		icon = GFX_focus_GMA_Anti_Fascism_Focus
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+
+		x = 11
+		y = 0
+		cost = 3
+		
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = GMA_Anti_Capitalism_Focus
+		}
+		completion_reward = {
+			add_timed_idea = {
+					idea = GMA_Anti_Fascism_Focus_idea
+					days = 180
+			}
+			add_stability = 0.10
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.10
+				}
+			add_legit = yes
+		}
+	}
+	focus = {
+		id = GMA_Anti_Capitalism_Focus
+		icon = GFX_focus_GMA_Anti_Capitalism_Focus
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+
+		x = 13
+		y = 0
+		cost = 3
+		
+		ai_will_do = {
+			factor = 0.25
+		}
+		mutually_exclusive = {
+			focus = GMA_Anti_Fascism_Focus
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = GMA_Anti_Capitalism_Focus_idea
+				days = 180
+			}
+			add_popularity = {
+				ideology = market_liberal
+				popularity = -0.08
+			} 
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.08
+			} 
+			add_stability = -0.10
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.05
+				}
+			add_legit = yes
+		}
+	}
+	focus = {
+		id = GMA_burden_of_gaia
+		icon = GFX_focus_GMA_burden_of_gaia
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Anti_Fascism_Focus
+		x = -4
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Anti_Fascism_Focus
+			focus = GMA_Anti_Capitalism_Focus
+		}
+		prerequisite = {
+				
+			focus = GMA_no_compromise_with_statists
+		}
+		mutually_exclusive = {
+			focus = GMA_burden_of_atlas
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			
+			remove_ideas = GMA_No_Direction
+			add_popularity = {
+				ideology = libertarian_socialist
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.03
+			} 
+			add_political_power = 75
+			custom_effect_tooltip = GMA_burden_of_gaia_tt
+			hidden_effect = {
+				country_lock_all_division_template = no
+				set_division_template_lock = {
+					division_template = "Green Mountain Anarchist Militia Brigade"
+					is_locked = no
+				}
+				set_division_template_lock = {
+					division_template = "Green Mountain Anarchist Infantry Division"
+					is_locked = no
+				}
+				load_oob = GMA_burden_of_gaia
+			}
+		}
+	}
+	focus = {
+		id = GMA_burden_of_atlas
+		icon = GFX_focus_GMA_the_burden_of_atlas
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_no_compromise_with_statists
+		x = 4
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = GMA_Anti_Fascism_Focus
+		}
+		prerequisite = {
+			focus = GMA_no_compromise_with_statists
+		}
+		ai_will_do = {
+			factor = 6
+		}
+		mutually_exclusive = {
+			focus = GMA_burden_of_gaia
+		}
+		completion_reward = {
+			remove_ideas = GMA_No_Direction
+			
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.05
+			}
+			add_political_power = 75
+			custom_effect_tooltip = GMA_burden_of_atlas_tt
+			hidden_effect = {
+				country_lock_all_division_template = no
+				set_division_template_lock = {
+					division_template = "Sons of Liberty Militia Brigade"
+					is_locked = no
+				}
+				set_division_template_lock = {
+					division_template = "Sons of Liberty Infantry Division"
+					is_locked = no
+				}
+				load_oob = GMA_burden_of_atlas
+			}
+		}
+	}
+	focus = {
+		id = GMA_invite_ELF_veterans
+		icon = GFX_focus_GMA_invite_ELF_veterans
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Anti_Fascism_Focus
+		x = -4
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_burden_of_gaia
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_invite_ELF_veterans_tt
+			#recruit_character = GMA_John_Zerzan_char
+			#recruit_character = 
+			hidden_effect = {
+				country_event = { id = gma.9 days = 15 }
+				country_event = { id = gma.91 days = 45 }
+			}
+			add_popularity = {
+				ideology = libertarian_socialist
+				popularity = 0.02
+			}
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.03
+			} 
+			hidden_effect = {
+				load_oob = GMA_elf
+			}
+		}
+	}
+	focus = {
+		id = GMA_destroy_the_heirarchal_capitalists
+		icon = GFX_focus_GMA_destroy_the_heirarchal_capitalists
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Anti_Fascism_Focus
+		x = 0
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_burden_of_gaia
+		}
+		ai_will_do = {
+			factor = 999
+		}
+		completion_reward = {
+			custom_effect_tooltip = The_Dissolving_Alliance_tt
+			set_country_flag = GMA_Association_Category_FLAG
+		}
+	}
+	focus = {
+		id = GMA_crush_the_enemies_of_property
+		icon = GFX_focus_GMA_Crush_the_Commies
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_no_compromise_with_statists
+		x = 0
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_burden_of_atlas
+		}
+		ai_will_do = {
+			factor = 999
+		}
+		completion_reward = {
+			custom_effect_tooltip = The_Dissolving_Alliance_Libertarian_tt
+			set_country_flag = GMA_Association_Category_FLAG
+		}
+	}
+	focus = {
+		id = GMA_open_our_door_to_pmcs
+		icon = GFX_focus_GMA_Open_Our_Doors_to_Pmcs
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_no_compromise_with_statists
+		x = 4
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_burden_of_atlas
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_hire_pmcs_cat_tt
+			set_country_flag = GMA_Opened_doors_to_PMCs_FLAG
+			add_popularity = {
+				ideology = market_liberal
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = GMA_organize_antifascist_brigades
+		icon = GFX_focus_GMA_organize_antifascist_brigades
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_no_compromise_with_statists
+		x = -3
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_burden_of_atlas
+			focus = GMA_burden_of_gaia
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_organize_antifascist_brigades_tt
+			hidden_effect = {
+				load_oob = GMA_antifa
+			}
+		}
+	}
+	focus = {
+		id = GMA_dawn_of_post_civilization
+		icon = GFX_focus_GMA_dawn_of_post_civilization
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_invite_ELF_veterans
+		x = -2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_invite_ELF_veterans
+		}
+		prerequisite = {
+			focus = GMA_destroy_the_heirarchal_capitalists
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_post_civ_idea
+			swap_ideas = {
+				remove_idea = high_industry
+				add_idea = medium_industry
+			}
+		}
+	}
+	focus = {
+		id = GMA_resuscitation_of_spirituality
+		icon = GFX_focus_GMA_resuscitation_of_spirituality
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_invite_ELF_veterans
+		x = 2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_invite_ELF_veterans
+		}
+		prerequisite = {
+			focus = GMA_destroy_the_heirarchal_capitalists
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_spirituality_idea
+			swap_ideas = {
+				remove_idea = medium_society
+				add_idea = high_society
+			}
+		}
+	}
+	focus = {
+		id = GMA_reorganize_individual_affinity_groups
+		icon = GFX_focus_GMA_reorganize_individual_affinity_groups
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_invite_ELF_veterans
+		x = 5
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_destroy_the_heirarchal_capitalists
+		}
+		prerequisite = {
+			focus = GMA_organize_antifascist_brigades
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			GMA_militia_org_increase = yes
+			add_stability = 0.10
+		}
+	}
+	focus = {
+		id = GMA_militia_organization
+		icon = GFX_focus_GMA_militia_organization
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_invite_ELF_veterans
+		x = 7
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_organize_antifascist_brigades
+		}
+		prerequisite = {
+			focus = GMA_destroy_the_heirarchal_capitalists
+			focus = GMA_crush_the_enemies_of_property
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			GMA_militia_org_increase = yes
+		}
+	}
+	focus = {
+		id = GMA_march_of_the_iii_percent
+		icon = GFX_focus_GMA_march_of_the_iii_percent
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_burden_of_atlas
+		x = -5
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_crush_the_enemies_of_property
+		}
+		prerequisite = {
+			focus = GMA_organize_antifascist_brigades
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			GMA_militia_org_increase = yes
+			add_war_support = 0.10
+		}
+	}
+	focus = {
+		id = GMA_home_of_capital
+		icon = GFX_focus_GMA_home_of_capital
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_burden_of_atlas
+		x = -2
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_open_our_door_to_pmcs
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas= GMA_home_of_capital_idea
+		}
+	}
+	focus = {
+		id = GMA_protectors_of_property
+		icon = GFX_focus_GMA_protectors_of_property
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_burden_of_atlas
+		x = 2
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_open_our_door_to_pmcs
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas= GMA_protectors_of_property_idea
+		}
+	}
+	focus = {
+		id = GMA_destroy_reactionary_academia
+		icon = GFX_focus_GMA_destroy_reactionary_academia
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_dawn_of_post_civilization
+		x = -2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_dawn_of_post_civilization
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = GMA_respect_freedom_of_thought
+		}
+		completion_reward = {
+			unlock_decision_category_tooltip = GMA_cultural_revolution_cat
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.20
+				}
+			add_legit = yes
+		}
+	}
+	focus = {
+		id = GMA_respect_freedom_of_thought
+		icon = GFX_focus_GMA_respect_freedom_of_thought
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_dawn_of_post_civilization
+		x = 0
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_dawn_of_post_civilization
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = GMA_destroy_reactionary_academia
+		}
+		completion_reward = {
+			add_ideas = GMA_freedom_of_thought_idea
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.10
+				}
+			add_legit = yes
+		}
+	}
+	focus = {
+		id = GMA_unite_the_communes
+		icon = GFX_focus_GMA_unite_the_communes
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_dawn_of_post_civilization
+		x = 2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_dawn_of_post_civilization
+			focus = GMA_resuscitation_of_spirituality
+		}
+		available = {
+			has_full_control_of_state = 1079
+			has_full_control_of_state = 793
+			has_full_control_of_state = 1080
+			has_full_control_of_state = 1078
+			has_full_control_of_state = 1077
+			has_full_control_of_state = 795
+			has_full_control_of_state = 357
+			has_full_control_of_state = 794
+			has_full_control_of_state = 1114
+			has_full_control_of_state = 792
+			has_full_control_of_state = 1115
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			hidden_effect = {
+				country_event = {
+					id = gma.2
+					days = 15
+				}
+			}
+			add_stability = 0.10
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.10
+				}
+			add_legit = yes
+			set_country_flag = developed_country
+			clr_country_flag = shithole_country
+			every_state = {
+				limit = {
+					has_state_flag = USA_core_state
+					NOT = {
+						is_core_of = ROOT
+					}
+				}
+				add_claim_by = ROOT
+			}
+		}
+	}
+	focus = {
+		id = GMA_thou_shall_not_commit_warcrimes
+		icon = GFX_focus_GMA_thou_shall_not_commit_warcrimes
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_dawn_of_post_civilization
+		x = 4
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_resuscitation_of_spirituality
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = GMA_sword_of_damocles
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = lower_supervision
+				add_idea = medium_supervision
+			}
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.20
+				}
+			add_legit = yes
+		}
+	}
+	focus = {
+		id = GMA_sword_of_damocles
+		icon = GFX_focus_GMA_sword_of_damocles
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_dawn_of_post_civilization
+		x = 6
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_resuscitation_of_spirituality
+		}
+		prerequisite = {
+			focus = GMA_destroy_the_heirarchal_capitalists
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = GMA_thou_shall_not_commit_warcrimes
+		}
+		completion_reward = {
+			add_ideas = GMA_unrestricted_warfare_idea
+			custom_effect_tooltip = GMA_sword_of_damocles_tt
+			hidden_effect = {
+				load_oob = GMA_fanatics
+			}
+		}
+	}
+	focus = {
+		id = GMA_reorganize_clusters
+		icon = GFX_focus_GMA_reorganize_clusters
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_invite_ELF_veterans
+		x = 6
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_reorganize_individual_affinity_groups
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 2 }
+			GMA_militia_org_increase = yes
+		}
+	}
+	focus = {
+		id = GMA_utilize_the_second_amendment
+		icon = GFX_focus_GMA_utilize_the_second_amendment
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_march_of_the_iii_percent
+		x = -1
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_march_of_the_iii_percent
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			GMA_militia_org_increase = yes
+			add_equipment_to_stockpile = { 
+				type = infantry_equipment_2
+				amount = 5000
+				producer = GMA
+			}
+		}
+	}
+	focus = {
+		id = GMA_attract_the_military_industrial_complex
+		icon = GFX_focus_GMA_attract_the_military_industrial_complex
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_march_of_the_iii_percent
+		x = 1
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_home_of_capital
+		}
+		prerequisite = {
+			focus = GMA_crush_the_enemies_of_property
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = GMA_attract_the_tech_conglomerates
+		}
+		completion_reward = {
+			add_ideas = GMA_military_industrial_complex_idea
+			add_equipment_to_stockpile = { 
+				type = infantry_equipment_2
+				amount = 1000
+				producer = GMA
+			}
+			add_equipment_to_stockpile = { 
+				type = support_equipment
+				amount = 1000
+				producer = GMA
+			}
+			add_war_support = 0.10
+		}
+	}
+	focus = {
+		id = GMA_attract_the_tech_conglomerates
+		icon = GFX_focus_GMA_attract_the_tech_conglomerates
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_march_of_the_iii_percent
+		x = 3
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_home_of_capital
+		}
+		prerequisite = {
+			focus = GMA_crush_the_enemies_of_property
+		}
+		mutually_exclusive = {
+			focus = GMA_attract_the_military_industrial_complex
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_second_silicon_valley_idea
+			add_stability = 0.10
+		}
+	}
+	focus = {
+		id = GMA_spread_our_freedom
+		icon = GFX_focus_GMA_spread_our_freedom
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_home_of_capital
+		x = 2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_home_of_capital
+			focus = GMA_protectors_of_property
+		}
+		prerequisite = {
+			focus = GMA_crush_the_enemies_of_property
+		}
+		available = {
+			has_full_control_of_state = 1079
+			has_full_control_of_state = 793
+			has_full_control_of_state = 1080
+			has_full_control_of_state = 1078
+			has_full_control_of_state = 1077
+			has_full_control_of_state = 795
+			has_full_control_of_state = 357
+			has_full_control_of_state = 794
+			has_full_control_of_state = 1114
+			has_full_control_of_state = 792
+			has_full_control_of_state = 1115
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.10
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.10
+				}
+			add_legit = yes
+			set_country_flag = developed_country
+			clr_country_flag = shithole_country
+			every_state = {
+				limit = {
+					has_state_flag = USA_core_state
+					NOT = {
+						is_core_of = ROOT
+					}
+				}
+				add_claim_by = ROOT
+			}
+		}
+	}
+	focus = {
+		id = GMA_regulate_the_militias
+		icon = GFX_focus_GMA_regulate_the_militias
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_protectors_of_property
+		x = 0
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_protectors_of_property
+		}
+	
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = GMA_respect_the_2nd_amendment
+		}
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = -0.05
+			swap_ideas = {
+				remove_idea = lower_police
+				add_idea = medium_police
+			}
+		}
+	}
+	focus = {
+		id = GMA_respect_the_2nd_amendment
+		icon = GFX_focus_GMA_respect_the_2nd_amendment
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_protectors_of_property
+		x = 2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_protectors_of_property
+		}
+		mutually_exclusive = {
+			focus = GMA_regulate_the_militias
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = -0.05
+			add_war_support = 0.10
+			add_equipment_to_stockpile = { 
+				type = infantry_equipment_2
+				amount = 10000
+				producer = GMA
+			}
+		}
+	}
+	focus = {
+		id = GMA_promote_enviromental_education
+		icon = GFX_focus_GMA_promote_enviromental_education
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_destroy_reactionary_academia
+		x = 1
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_destroy_reactionary_academia
+			focus = GMA_respect_freedom_of_thought
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.10
+			add_popularity = {
+				ideology = nationalist 
+				popularity = 0.10
+			}
+		}
+	}
+	focus = {
+		id = GMA_the_agrarian_ideal
+		icon = GFX_focus_GMA_the_agrarian_ideal
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_unite_the_communes
+		x = 0
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_unite_the_communes
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_the_agrarian_ideal_tt
+			add_popularity = {
+				ideology = nationalist 
+				popularity = 0.05
+			}
+			if = {
+				limit = {
+					has_completed_focus = GMA_dawn_of_post_civilization
+				}
+				swap_ideas = {
+					remove_idea = medium_industry
+					add_idea = low_industry
+				}
+			}
+			
+			hidden_effect = {
+				swap_ideas = {
+					remove_idea = GMA_post_civ_idea
+					add_idea = GMA_post_civ2_idea
+				}
+			}
+		}
+	}
+	focus = {
+		id = GMA_smash_institutional_churches
+		icon = GFX_focus_GMA_smash_institutional_churches
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_thou_shall_not_commit_warcrimes
+		x = 1
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_thou_shall_not_commit_warcrimes
+			focus = GMA_sword_of_damocles
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = -0.10
+			add_political_power = 150
+			add_popularity = {
+				ideology = libertarian_socialist 
+				popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = GMA_rural_peoples_militias
+		icon = GFX_focus_GMA_rural_peoples_militias
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_reorganize_individual_affinity_groups
+		x = 0
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_reorganize_individual_affinity_groups
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_burden_of_gaia_tt
+			hidden_effect = {
+				load_oob = GMA_rural_militias
+			}
+		}
+	}
+	focus = {
+		id = GMA_modern_military_tactics
+		icon = GFX_focus_GMA_modern_military_tactics
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_militia_organization
+		x = 0
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_militia_organization
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			army_experience = 120
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_old_land_doctrine
+			}
+			GMA_militia_org_increase = yes
+			
+		}
+	}
+	focus = {
+		id = GMA_friends_in_the_black_market
+		icon = GFX_focus_GMA_friends_in_the_black_market
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_militia_organization
+		x = 2
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_march_of_the_iii_percent
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = { 
+				type = infantry_equipment_2
+				amount = 10000
+				producer = GMA
+			}
+			set_temp_variable = {
+				var = income_var_temp
+				value = 2.5
+			}
+			add_income_with_inflation = yes
+		}
+	}
+	focus = {
+		id = GMA_remove_trade_barriers
+		icon = GFX_focus_GMA_friends_in_the_black_market
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_militia_organization
+		x = 4
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_attract_the_military_industrial_complex
+			focus = GMA_attract_the_tech_conglomerates
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = lower_trade
+				add_idea = higher_trade
+			}
+		}
+	}
+	focus = {
+		id = GMA_relax_regulations
+		icon = GFX_focus_GMA_relax_regulations
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_militia_organization
+		x = 7
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_spread_our_freedom
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = GMA_attract_the_military_industrial_complex
+				}
+				swap_ideas = {
+					remove_idea = GMA_military_industrial_complex_idea
+					add_idea = GMA_military_industrial_complex2_idea
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = GMA_attract_the_tech_conglomerates
+				}
+				swap_ideas = {
+					remove_idea = GMA_second_silicon_valley_idea
+					add_idea = GMA_second_silicon_valley2_idea
+				}
+			}
+			swap_ideas = {
+				remove_idea = low_safety
+				add_idea = lower_safety
+			}
+		}
+	}
+	focus = {
+		id = GMA_tributes_to_the_protectors
+		icon = GFX_focus_GMA_friends_in_the_black_market
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_militia_organization
+		x = 10
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_regulate_the_militias
+			focus = GMA_respect_the_2nd_amendment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_tributes_to_the_protectors_tt
+			hidden_effect = {
+				swap_ideas = {
+					remove_idea = GMA_protectors_of_property_idea
+					add_idea = GMA_protectors_of_property2_idea
+				}
+			}
+		}
+	}
+	focus = {
+		id = GMA_promote_rugged_ruralism
+		icon = GFX_focus_GMA_promote_rugged_ruralism
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_respect_freedom_of_thought
+		x = -1
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_promote_enviromental_education
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.20
+				}
+			add_legit = yes
+			swap_ideas = {
+				remove_idea = high_farming
+				add_idea = medium_farming
+			}
+		}
+	}
+	focus = {
+		id = GMA_return_to_the_barter_economy
+		icon = GFX_focus_GMA_return_to_the_barter_economy
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_respect_freedom_of_thought
+		x = 2
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_the_agrarian_ideal
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.10
+				}
+			add_legit = yes
+			swap_ideas = {
+				remove_idea = low_poverty
+				add_idea = medium_poverty
+			}
+			hidden_effect = {
+				1117 = {
+					add_core_of = GMA
+				}
+				1258 = {
+					add_core_of = GMA
+				}
+				1116 = {
+					add_core_of = GMA
+				}
+				358 = {
+					add_core_of = GMA
+				}
+				918 = {
+					add_core_of = GMA
+				}
+				1077 = {
+					add_core_of = GMA
+				}
+				795 = {
+					add_core_of = GMA
+				}
+				357 = {
+					add_core_of = GMA
+				}
+				1078 = {
+					add_core_of = GMA
+				}
+				1118 = {
+					add_core_of = GMA
+				}
+				1080 = {
+					add_core_of = GMA
+				}
+				793 = {
+					add_core_of = GMA
+				}
+				1079 = {
+					add_core_of = GMA
+				}
+				1114 = {
+					add_core_of = GMA
+				}
+				794 = {
+					add_core_of = GMA
+				}
+				792 = {
+					add_core_of = GMA
+				}
+				1115 = {
+					add_core_of = GMA
+				}
+			}
+		}
+	}
+	focus = {
+		id = GMA_embrace_guru_culture
+		icon = GFX_focus_GMA_embrace_guru_culture
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_respect_freedom_of_thought
+		x = 5
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_smash_institutional_churches
+		}
+		available = {
+			has_completed_focus = GMA_unite_the_communes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = GMA_resuscitation_of_spirituality
+				}
+				swap_ideas = {
+					remove_idea = GMA_spirituality_idea
+					add_idea = GMA_spirituality2_idea
+				}
+			}
+			country_event = {
+				id = gma.53
+				days = 7
+			}
+		}
+	}
+	focus = {
+		id = GMA_flames_of_revolution
+		icon = GFX_focus_GMA_flames_of_revolution
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_respect_freedom_of_thought
+		x = 8
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_reorganize_clusters
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_flames_of_revolution_idea
+		}
+	}		
+	focus = {
+		id = GMA_live_free_or_die
+		icon = GFX_focus_GMAlivefreeordie
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_respect_freedom_of_thought
+		x = 10
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_utilize_the_second_amendment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_live_free_or_die_idea
+		}
+	}	
+	focus = {
+		id = GMA_in_pursuit_of_profit
+		icon = GFX_focus_GMApursuitofprofit
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_respect_freedom_of_thought
+		x = 13
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_remove_trade_barriers
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.10
+				}
+			add_legit = yes
+			swap_ideas = {
+				remove_idea = low_poverty
+				add_idea = medium_poverty
+			}
+		}
+	}
+	focus = {
+		id = GMA_hub_of_american_innovation
+		icon = GFX_focus_GMAhubofamericaninnovation
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_respect_freedom_of_thought
+		x = 16
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_relax_regulations
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot = 1
+			set_temp_variable = { 
+					var = academic_development_var_temp
+					value = 0.10
+			}
+			add_academic_development = yes
+			hidden_effect = {
+				1117 = {
+					add_core_of = GMA
+				}
+				1258 = {
+					add_core_of = GMA
+				}
+				1116 = {
+					add_core_of = GMA
+				}
+				358 = {
+					add_core_of = GMA
+				}
+				918 = {
+					add_core_of = GMA
+				}
+				1077 = {
+					add_core_of = GMA
+				}
+				795 = {
+					add_core_of = GMA
+				}
+				357 = {
+					add_core_of = GMA
+				}
+				1078 = {
+					add_core_of = GMA
+				}
+				1118 = {
+					add_core_of = GMA
+				}
+				1080 = {
+					add_core_of = GMA
+				}
+				793 = {
+					add_core_of = GMA
+				}
+				1079 = {
+					add_core_of = GMA
+				}
+				1114 = {
+					add_core_of = GMA
+				}
+				794 = {
+					add_core_of = GMA
+				}
+				792 = {
+					add_core_of = GMA
+				}
+				1115 = {
+					add_core_of = GMA
+				}
+			}
+		}
+	}
+	focus = {
+		id = GMA_a_modern_john_galt
+		icon = GFX_focus_GMA_A_Modern_John_Galt
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_respect_freedom_of_thought
+		x = 19
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_tributes_to_the_protectors
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_a_modern_john_galt_idea
+		}
+	}
+	focus = {
+		id = GMA_nature_worship
+		icon = GFX_focus_GMA_nature_worship
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_promote_rugged_ruralism
+		x = -2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_promote_rugged_ruralism
+		}
+		available = {
+			has_country_flag = GMA_Association_Collapsed
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 125
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.05
+			}
+			add_legit = yes
+		}
+	}
+	focus = {
+		id = GMA_call_of_the_wild
+		icon = GFX_focus_GMA_call_of_the_wild
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_promote_rugged_ruralism
+		x = 2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_promote_rugged_ruralism
+		}
+		prerequisite = {
+			focus = GMA_return_to_the_barter_economy
+		}
+		available = {
+			NOT = {
+				has_country_flag = GMA_Mariam_Simos_Control
+			}
+			has_country_flag = GMA_Association_Collapsed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = GMA_post_scarcity_anarchism
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_call_of_the_wild_tt
+			hidden_effect = {
+				country_event = {
+					id = gma.19
+					days = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = GMA_post_scarcity_anarchism
+		icon = GFX_focus_GMA_post_scarcity_anarchism
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_promote_rugged_ruralism
+		x = 4
+		y = 1
+		cost = 5
+		
+		available = {
+			has_country_leader = {
+				character = GMA_Miriam_Simos_char
+				ruling_only = yes
+			}
+			has_country_flag = GMA_Association_Collapsed
+		}
+
+		prerequisite = {
+			focus = GMA_return_to_the_barter_economy
+		}
+		prerequisite = {
+			focus = GMA_embrace_guru_culture
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = GMA_call_of_the_wild
+		}
+		completion_reward = {
+			add_stability = 0.10
+			add_ideas = GMA_post_scarcity_anarchism_idea
+		}
+	}
+	focus = {
+		id = GMA_the_psychedelic_experience
+		icon = GFX_focus_GMA_the_psychedelic_experience
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_promote_rugged_ruralism
+		x = 8
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_embrace_guru_culture
+		}
+		ai_will_do = {
+			factor = 1
+		}
+			available = {
+			has_country_flag = GMA_Association_Collapsed
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_country_leader = {
+						character = GMA_Miriam_Simos_char
+						ruling_only = yes
+					}
+				}
+				add_ideas = GMA_the_psychedelic_experience_idea
+				hidden_effect = {
+					country_event = { #Mass Overdoseage causes hospital overflow
+						id = gma.38
+						days = 170
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_leader = {
+							character = GMA_Miriam_Simos_char
+							ruling_only = yes
+						}
+					}
+				}
+				add_ideas = GMA_the_accepted_psychedelics_idea
+			}
+		}
+	}
+	focus = {
+		id = GMA_stomp_out_the_parasites
+		icon = GFX_focus_GMA_Weed_out_the_Anarchists
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_in_pursuit_of_profit
+		x = -2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_in_pursuit_of_profit
+		}
+			available = {
+			has_country_flag = GMA_Association_Collapsed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = GMA_Crushing_Undesirables_idea
+				days = 105
+			}
+			hidden_effect = {
+				country_event = { #soldier watches as his brother, an undercover CIA Agent is hung from a lamppost by his comrades
+					id = gma.29
+					days = 41
+				}
+				country_event = { #public execution of David van Deusen
+					id = gma.30
+					days = 82
+				}
+				country_event = { #Silence on the homefront
+					id = gma.31
+					days = 105
+				}
+			}
+		}
+	}
+	focus = {
+		id = GMA_Life_Liberty_Happiness
+		icon = GFX_focus_GMA_life_liberty_happiness
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_in_pursuit_of_profit
+		x = 2
+		y = 1
+		cost = 5
+		available = {
+			has_country_flag = GMA_Association_Collapsed
+		}
+		prerequisite = {
+			focus = GMA_in_pursuit_of_profit
+		}
+		prerequisite = {
+			focus = GMA_hub_of_american_innovation
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = { has_country_flag = GMA_Association_Collapsed factor = 500 }
+		}
+		mutually_exclusive = {
+			focus = GMA_Tread_on_the_Snakes
+		}
+		completion_reward = {
+			set_cosmetic_tag = GMA_Confederation_of_Free_American_Republics
+			add_war_support = -0.05
+			set_temp_variable = { 
+				var = legit_var_temp
+				value = 0.15
+			}
+			set_politics = {
+				ruling_party = market_liberal
+				elections_allowed = yes
+				last_election = "2020.3.4"
+				election_frequency = 24
+			}
+			add_legit = yes
+			add_timed_idea = {
+				idea = GMA_Anarchist_Abandonment_idea
+				days = 180
+			}
+		}
+	}
+	focus = {
+		id = GMA_Tread_on_the_Snakes
+		icon = GFX_focus_GMA_Tread_on_the_Snakes
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_in_pursuit_of_profit
+		x = 4
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_a_modern_john_galt
+		}
+		available = {
+			has_country_flag = GMA_Association_Collapsed
+		}
+		prerequisite = {
+			focus = GMA_hub_of_american_innovation
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = { has_country_flag = GMA_Association_Collapsed factor = 500 }
+		}
+		mutually_exclusive = {
+			focus = GMA_Life_Liberty_Happiness
+		}
+		completion_reward = {
+			add_ideas = GMA_mercenary_state_idea
+			set_politics = {
+				ruling_party = authoritarian_democrat
+				elections_allowed = no
+				last_election = "2020.3.4"
+				election_frequency = 48
+			}
+			#recruit_character = GMA_Airan_Berry_char
+			#recruit_character = GMA_Luke_Denman_char
+			#recruit_character = GMA_Chris_Osman_char
+			#recruit_character = GMA_Christopher_Heben_char
+			#recruit_character = GMA_Joseph_Hunter_char
+			#recruit_character = GMA_Andrew_Milburn_char
+			#recruit_character = GMA_Jordan_Goudreau_char
+			set_cosmetic_tag = GMA_Green_Mountain_Company
+			add_timed_idea = {
+				idea = GMA_Anarchist_Abandonment_idea
+				days = 180
+			}
+		}
+	}
+	focus = {
+		id = GMA_vigilante_justice
+		icon = GFX_focus_GMA_vigilante_justice
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_in_pursuit_of_profit
+		x = 8
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_a_modern_john_galt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_vigilante_justice_idea
+			add_ideas = lower_supervision
+			hidden_effect = {
+				country_event = { #Blood Eagle
+					id = gma.28
+					days = 21
+				}
+			}
+		}
+	}
+	focus = {
+		id = GMA_year_zero
+		icon = GFX_focus_GMA_year_zero
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_nature_worship
+		x = 2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_nature_worship
+		}
+		available = {
+			has_country_flag = GMA_Association_Collapsed
+		}
+		prerequisite = {
+			focus = GMA_call_of_the_wild
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_Year_Zero_idea
+			set_cosmetic_tag = GMA_Neo_Luddite_America
+			country_event = {
+				id = gma.5
+				days = 10
+			}
+			country_event = { #Ted declares Year Zero
+				id = gma.63
+				days = 1
+			}
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.10
+			}
+		}
+	}
+	focus = {
+		id = GMA_radical_reconstruction
+		icon = GFX_focus_GMA_radical_reconstruction
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_nature_worship
+		x = 5
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_call_of_the_wild
+			focus = GMA_post_scarcity_anarchism
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.10
+			}
+			add_legit = yes
+			add_timed_idea = {
+				idea = GMA_Reconstruction_Idea
+				days = 180
+			}
+		}
+	}
+	focus = {
+		id = GMA_utopian_communalism
+		icon = GFX_focus_GMA_utopian_communalism
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_nature_worship
+		x = 8
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_post_scarcity_anarchism
+		}
+		prerequisite = {
+			focus = GMA_the_psychedelic_experience
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_Utopian_Communalism_idea
+			add_popularity = {
+				ideology = libertarian_socialist
+				popularity = 0.10
+			}
+		}
+	}
+	focus = {
+		id = GMA_review_the_articles_of_confederation
+		icon = GFX_focus_GMAarticlesofconfederation
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_stomp_out_the_parasites
+		x = 2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_stomp_out_the_parasites
+		}
+		prerequisite = {
+			focus = GMA_Life_Liberty_Happiness
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_country_flag = GMA_Articles_of_Confederation_Decision_Flag
+			custom_effect_tooltip = GMA_Articles_of_Confederation_Decision_tt
+			add_stability = 0.10
+			set_temp_variable = { 
+				var = society_development_var_temp
+				value = 0.05
+			}
+			add_society_development = yes
+		}
+	}
+	focus = {
+		id = GMA_Flaws_of_Democracy
+		icon = GFX_focus_GMA_Democratic_Flaws
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_stomp_out_the_parasites
+		x = 5
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Life_Liberty_Happiness
+			focus = GMA_Tread_on_the_Snakes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = social_democrat
+				popularity = -0.03
+			}
+			add_popularity = {
+				ideology = social_liberal
+				popularity = -0.03
+			}
+			add_popularity = {
+				ideology = conservative
+				popularity = -0.03
+			}
+			add_political_power = 125
+			hidden_effect = {
+				country_event = { #Teacher is given new anti-democracy curriculum
+					id = gma.32
+					days = 20
+				}
+			}
+		}
+	}
+	focus = {
+		id = GMA_Protection_for_a_Price
+		icon = GFX_focus_GMA_Price_of_Protection
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_stomp_out_the_parasites
+		x = 8
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Tread_on_the_Snakes
+		}
+		prerequisite = {
+			focus = GMA_vigilante_justice
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.08
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.10
+			}
+			add_legit = yes
+			set_temp_variable = { 
+					var = military_development_var_temp
+					value = 0.10
+			}
+			add_military_development = yes
+			set_temp_variable = {
+				var = income_var_temp
+				value = 20.0
+			}
+			add_income_with_inflation = yes
+		}
+	}
+	focus = {
+		id = GMA_Standardize_Cryptocurrency #Standardize Cryptocurrency
+		icon = GFX_focus_GMAcryptocurrency
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_review_the_articles_of_confederation
+		x = -2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_review_the_articles_of_confederation
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = lower_interest_rates
+			set_temp_variable = {
+				var = income_var_temp
+				value = 128.0
+			}
+			add_income_with_inflation = yes
+		}
+	}
+	focus = {
+		id = GMA_Restore_the_Continental_Congress #Restore the Continental Congress
+		icon = GFX_focus_GMAcontinentalcongress
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_review_the_articles_of_confederation
+		x = 0
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_review_the_articles_of_confederation
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.05
+			}
+			add_legit = yes
+			country_event = { #First meeting of the Continental Congress
+				id = gma.33
+				days = 10
+			}
+		}
+	}
+	focus = {
+		id = GMA_The_Price_Of_Liberty #The Price of Liberty
+		icon = GFX_focus_GMApriceofliberty
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_review_the_articles_of_confederation
+		x = 2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_review_the_articles_of_confederation
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = low_taxes
+			set_temp_variable = {
+				var = income_var_temp
+				value = 2.5
+			}
+			add_income_with_inflation = yes
+			hidden_effect = {
+				country_event = { #Tax Collectors are hung in Boston, protestors swiftly put down
+					id = gma.41
+					days = 7
+				}
+			}
+		}
+	}
+	focus = {
+		id = GMA_An_American_Confederation #An American Confederation
+		icon = GFX_focus_GMAamericanconfederation
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		available = {
+			has_country_flag = GMA_First_Continental_Congress_Meeting_Concluded_flag
+		}
+		relative_position_id = GMA_review_the_articles_of_confederation
+		x = 1
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_The_Price_Of_Liberty
+		}
+		prerequisite = {
+			focus = GMA_Restore_the_Continental_Congress
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_country_flag = GMA_Supported_Initial_Federalization_flag
+				}
+				add_ideas = GMA_Federalized_American_Confederation_idea
+				add_popularity = {
+					ideology = market_liberal
+					popularity = 0.05
+				}	 
+				set_temp_variable = { 
+					var = society_development_var_temp
+					value = 0.10
+				}
+				add_society_development = yes
+				set_temp_variable = { 
+					var = industrial_development_var_temp
+					value = 0.10
+				}
+				add_industrial_development = yes
+				set_temp_variable = { 
+					var = military_development_var_temp
+					value = 0.10
+				}
+				add_military_development = yes
+			}
+			if = {
+				limit = {
+					has_country_flag = GMA_Shot_Down_Initial_Federalization_flag
+				}
+				add_ideas = GMA_Libertarian_American_Confederation_idea
+				add_popularity = {
+					ideology = market_liberal
+					popularity = 0.05
+				}	
+				set_temp_variable = { 
+					var = academic_development_var_temp
+					value = 0.10
+				}
+				add_academic_development = yes
+				set_temp_variable = { 
+					var = farming_development_var_temp
+					value = 0.10
+				}
+				add_farming_development = yes
+				set_temp_variable = { 
+					var = poverty_development_var_temp
+					value = 0.10
+				}
+				add_poverty_development = yes
+			}
+		}
+	}
+	focus = {
+		id = GMA_Abolish_the_Duopoly #Abolish the Duopoly
+		icon = GFX_focus_GMA_Abolish_Two_Parties
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_review_the_articles_of_confederation
+		x = -1
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Standardize_Cryptocurrency
+		}
+		prerequisite = {
+			focus = GMA_Restore_the_Continental_Congress
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 100
+			set_temp_variable = { 
+				var = society_development_var_temp
+				value = 0.05
+			}
+			add_society_development = yes
+			hidden_effect = {
+				country_event = { #Establishment of Legal Political Parties
+					id = gma.42
+					days = 7
+				}
+			}
+		}
+	}
+	focus = {
+		id = GMA_Promote_Sovereign_Citizenship #Promote Sovereign Citizenship
+		icon = GFX_focus_GMA_Sovereign_Citizens
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_review_the_articles_of_confederation
+		x = 0
+		y = 3
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Restore_the_Continental_Congress
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_Sovereign_Citizenship
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.05
+			}
+			add_legit = yes
+			set_temp_variable = { 
+				var = society_development_var_temp
+				value = 0.10
+			}
+			add_society_development = yes
+			hidden_effect = {
+				country_event = { #Growing Stability and Happiness in controlled territories
+					id = gma.43
+					days = 14
+				}
+			}
+		}
+	}
+	focus = {
+		id = GMA_Our_Companies_First
+		icon = GFX_focus_GMA_Our_Company_First
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Protection_for_a_Price
+		x = -2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Protection_for_a_Price
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = {
+				GMA_Jordan_Goudreau_HM
+				GMA_Chris_Osman_FM
+				GMA_Andrew_Milburn_EM
+				GMA_Airan_Berry_IM
+				GMA_Luke_Denman_IntelM
+			}
+		}
+	}
+	focus = {
+		id = GMA_Unify_our_Command_Structures
+		icon = GFX_focus_GMA_Unify_the_Command
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Protection_for_a_Price
+		x = 0
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Protection_for_a_Price
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.25
+				uses = 3
+				category = cat_old_land_doctrine
+			}
+			add_command_power = 50
+			army_experience = 25
+		}
+	}
+	focus = {
+		id = GMA_Permit_Execute_Authority
+		icon = GFX_focus_GMA_Execute_Authority
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Protection_for_a_Price
+		x = 2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Protection_for_a_Price
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_unrestricted_warfare_idea
+			hidden_effect = {
+				country_event = { #Anti-Libertarian Coup
+					id = gma.64
+					days = 8
+				}
+			}
+		}
+	}
+	focus = {
+		id = GMA_Loyalty_to_the_Paycheck
+		icon = GFX_focus_GMA_Loyalty_to_the_Paycheck
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Protection_for_a_Price
+		x = -1
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Our_Companies_First
+		}
+		prerequisite = {
+			focus = GMA_Unify_our_Command_Structures
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_Rampant_Corruption_idea
+		}
+	}
+	focus = {
+		id = GMA_Velvet_Glove_on_an_Iron_Fist
+		icon = GFX_focus_GMA_Iron_Fist
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Protection_for_a_Price
+		x = 1
+		y = 2
+		cost = 5
+		
+		available = {
+			has_political_power > 150
+		}
+		prerequisite = {
+			focus = GMA_Permit_Execute_Authority
+		}
+		prerequisite = {
+			focus = GMA_Unify_our_Command_Structures
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_cosmetic_tag = GMA_Civilian_PMC_Gov
+			custom_effect_tooltip = GMA_Civillian_PMC_tt
+			hidden_effect = {
+				retire_character = GMA_Daniel_Banyai_char
+				retire_character = GMA_Cody_Wilson_char
+				retire_character = GMA_Christian_Yingling_char
+				retire_character = GMA_Steven_Carrillo_char
+			}
+		}
+	}
+	focus = {
+		id = GMA_Privatize_Mobilization
+		icon = GFX_focus_GMA_Privatize_Mobilization
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Protection_for_a_Price
+		x = 0
+		y = 3
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Unify_our_Command_Structures
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_Permanent_Mobilization_tt
+			add_ideas = permanent_mobilization
+		}
+	}
+	focus = {
+		id = GMA_american_nostalgia
+		icon = GFX_focus_GMA_American_Nostalgia
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_An_American_Confederation
+		x = 2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_An_American_Confederation
+			focus = GMA_Loyalty_to_the_Paycheck
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_American_Nostalgia_idea
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.10
+			}
+			add_legit = yes
+		}
+	}
+	focus = {
+		id = GMA_vanguard_of_anti_technology
+		icon = GFX_focus_GMA_Vanguard_of_Anti_Technology
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_year_zero
+		x = -2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_year_zero
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot = -1
+			add_ideas = GMA_Anti_Tech_Conversion_idea
+		}
+	}
+	focus = {
+		id = GMA_out_of_the_cities
+		icon = GFX_focus_GMA_out_of_the_cities
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_year_zero
+		x = 0
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_year_zero
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_owned_by = GMA
+					NOT = {
+						OR = {
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = conurbation
+							has_state_category = megalopolis
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_owned_by = GMA
+					NOT = {
+						OR = {
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = conurbation
+							has_state_category = megalopolis
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_owned_by = GMA
+					NOT = {
+						OR = {
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = conurbation
+							has_state_category = megalopolis
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_owned_by = GMA
+					NOT = {
+						OR = {
+							has_state_category = large_city
+							has_state_category = metropolis
+							has_state_category = conurbation
+							has_state_category = megalopolis
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			country_event = { #Encouraging people out of cities
+				id = gma.48
+				days = 14
+			}
+		}
+	}
+	focus = {
+		id = GMA_Cult_of_Knowledge
+		icon = GFX_focus_GMA_Cult_of_Knowledge
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_year_zero
+		x = 2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_year_zero
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_Knowledge_Cult_idea
+		}
+	}
+	focus = {
+		id = GMA_cleanse_our_ranks
+		icon = GFX_focus_GMA_cleanse_our_ranks
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_year_zero
+		x = -1
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_vanguard_of_anti_technology
+		}
+		prerequisite = {
+			focus = GMA_out_of_the_cities
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = GMA_Cleansing_the_Vanguard
+				days = 180
+			}
+			hidden_effect = {
+				country_event = { #Trial
+					id = gma.49
+					days = 181
+				}
+			}
+		}
+	}
+	focus = {
+		id = GMA_into_the_wilderness
+		icon = GFX_focus_GMA_into_the_wilderness
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_year_zero
+		x = 1
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Cult_of_Knowledge
+		}
+		prerequisite = {
+			focus = GMA_out_of_the_cities
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event = { #Wildernessization of the Government
+				id = gma.46
+				days = 1
+			}
+			set_temp_variable = { 
+				var = legit_var_temp
+				value = 0.10
+			}
+			add_legit = yes
+		}
+	}
+	focus = {
+		id = GMA_accelerate_the_crisis
+		icon = GFX_focus_GMA_accelerate_the_crisis
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_year_zero
+		x = 0
+		y = 3
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_out_of_the_cities
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			country_event = { #Skyscrappers destroyed
+				id = gma.50
+				days = 5
+			}
+
+			hidden_effect = {
+				country_event = { #People start leaving our nation
+					id = gma.51
+					days = 125
+				}
+			}
+
+			set_temp_variable = { 
+				var = society_development_var_temp
+				value = 0.20
+			}
+			add_society_development = yes
+		}
+	}
+	focus = {
+		id = GMA_organize_rural_communes
+		icon = GFX_focus_GMA_organize_rural_communes
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_utopian_communalism
+		x = -2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_utopian_communalism
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = GMA_Utopian_Communalism_idea
+				add_idea = GMA_Rural_Utopia_idea
+			}
+		}
+	}
+	focus = {
+		id = GMA_decentralized_authority
+		icon = GFX_focus_GMA_decentralized_authority
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_utopian_communalism
+		x = 0
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_utopian_communalism
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_stability = 0.10
+			set_temp_variable = { 
+				var = society_development_var_temp
+				value = 0.10
+			}
+			add_society_development = yes
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.05
+			}
+			add_legit = yes
+		}
+	}
+	focus = {
+		id = GMA_towards_a_liberationary_technologies
+		icon = GFX_focus_GMA_Liberationary_Technologies
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_utopian_communalism
+		x = 2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_utopian_communalism
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot = 1
+			set_temp_variable = { 
+				var = academic_development_var_temp
+				value = 0.10
+			}
+			add_academic_development = yes
+			add_timed_idea = {
+				idea = GMA_Push_for_Technological_Freedom
+				days = 240
+			}
+		}
+	}
+	focus = {
+		id = GMA_organic_cities
+		icon = GFX_focus_GMA_organic_cities
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_utopian_communalism
+		x = -1
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_organize_rural_communes
+		}
+		prerequisite = {
+			focus = GMA_decentralized_authority
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_Creating_Organic_Cities_tt
+			set_country_flag = GMA_Org_Cities_Flag
+			set_temp_variable = { 
+				var = poverty_development_var_temp
+				value = 0.20
+			}
+			add_poverty_development = yes
+		}
+	}
+	focus = {
+		id = GMA_sustainable_development
+		icon = GFX_focus_GMA_sustainable_development
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_utopian_communalism
+		x = 1
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_towards_a_liberationary_technologies
+		}
+		prerequisite = {
+			focus = GMA_decentralized_authority
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_temp_variable = { 
+				var = industrial_development_var_temp
+				value = 0.10
+			}
+			add_industrial_development = yes
+			add_ideas = GMA_Sustainable_Development_idea
+		}
+	}
+	focus = {
+		id = GMA_Expand_Minority_Rights
+		icon = GFX_focus_GMA_Expand_Minority_Rights
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_utopian_communalism
+		x = 0
+		y = 3
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_decentralized_authority
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_temp_variable = { 
+					var = legit_var_temp
+					value = 0.10
+			}
+			add_legit = yes
+			add_ideas = {
+				higher_immigration
+				high_race
+				higher_prison
+			}
+			
+		}
+	}
+	focus = {
+		id = GMA_live_alongside_nature
+		icon = GFX_focus_GMA_live_alongside_nature
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_utopian_communalism
+		x = -3
+		y = 3
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_organic_cities
+			focus = GMA_into_the_wilderness
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_temp_variable = { 
+				var = farming_development_var_temp
+				value = 0.10
+			}
+			add_farming_development = yes
+			set_temp_variable = { 
+				var = society_development_var_temp
+				value = 0.10
+			}
+			add_society_development = yes
+		}
+	}
+	focus = {
+		id = GMA_Bring_Prosperity_Back
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_no_compromise_with_statists
+		x = 12
+		y = 0
+		cost = 5
+		
+		available = {
+			or = {
+				has_completed_focus = GMA_Tread_on_the_Snakes
+				has_completed_focus = GMA_call_of_the_wild
+				has_completed_focus = GMA_post_scarcity_anarchism
+				has_completed_focus = GMA_Life_Liberty_Happiness
+			}
+		}
+		prerequisite = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 150
+			set_temp_variable = { 
+				var = society_development_var_temp
+				value = 0.10
+			}
+			add_society_development = yes
+		}
+	}
+	focus = {
+		id = GMA_Expand_New_England_Fisheries
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Bring_Prosperity_Back
+		mutually_exclusive = {
+			focus = GMA_Enforce_Restrictive_Fishing_Protocols
+		}
+		x = -4
+		y = 1
+		cost = 10
+		
+		prerequisite = {
+			focus = GMA_Bring_Prosperity_Back
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			navy_experience = 40
+			If = {
+				limit = {
+					OR = {
+						has_completed_focus = GMA_call_of_the_wild
+						has_completed_focus = GMA_post_scarcity_anarchism
+					}
+				}
+				add_stability = -0.05
+				custom_effect_tooltip = GMA_Domestic_Fisheries_bad_tt
+				set_country_flag = GMA_Domestic_Fisheries_Mechanic_Flag
+
+			}
+			If = {
+				limit = {
+					OR = {
+						has_completed_focus = GMA_Tread_on_the_Snakes
+						has_completed_focus = GMA_Life_Liberty_Happiness
+					}
+				}
+				add_stability = 0.05
+				custom_effect_tooltip = GMA_Domestic_Fisheries_good_tt
+				set_country_flag = GMA_Domestic_Fisheries_Mechanic_Flag
+			}
+		}
+	}
+	focus = {
+		id = GMA_Reopen_Atlantic_Dockyards
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Bring_Prosperity_Back
+		mutually_exclusive = {
+			focus = GMA_Repurpose_Atlantic_Dockyards
+		}
+		x = -4
+		y = 2
+		cost = 10
+		
+		prerequisite = {
+			focus = GMA_Expand_New_England_Fisheries
+			focus = GMA_Enforce_Restrictive_Fishing_Protocols
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_Reopened_Dockyards_tt
+			set_country_flag = GMA_Reopened_Dockyards_flag
+			hidden_effect = {
+				every_core_state = {
+					limit = {
+						is_owned_by = GMA
+						is_coastal = yes
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+					remove_building = {
+						type = infrastructure
+						level = 1
+					}
+				}
+
+			}
+			set_temp_variable = { 
+					var = industrial_development_var_temp
+					value = 0.10
+				}
+				add_industrial_development = yes
+
+		}
+	}
+	focus = {
+		id = GMA_Repurpose_Atlantic_Dockyards
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Bring_Prosperity_Back
+		mutually_exclusive = {
+			focus = GMA_Reopen_Atlantic_Dockyards
+		}
+		x = -2
+		y = 2
+		cost = 10
+		
+		prerequisite = {
+			focus = GMA_Expand_New_England_Fisheries
+			focus = GMA_Enforce_Restrictive_Fishing_Protocols
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_Repurposed_Dockyards_tt
+			set_country_flag = GMA_Repurposed_Dockyards_flag
+			hidden_effect = {
+				every_core_state = {
+					limit = {
+						is_owned_by = GMA
+						dockyard > 1
+					}
+					remove_building = {
+						type = dockyard
+						level = 1
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					damage_building = {
+						type = infrastructure
+						damage = 2
+					}
+				}
+			}
+			set_temp_variable = { 
+				var = farming_development_var_temp
+				value = 0.10
+			}
+			add_farming_development = yes
+		}
+	}
+		focus = {
+		id = GMA_Enforce_Restrictive_Fishing_Protocols
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Bring_Prosperity_Back
+		mutually_exclusive = {
+			focus = GMA_Expand_New_England_Fisheries
+		}
+		x = -2
+		y = 1
+		cost = 10
+		
+		prerequisite = {
+			focus = GMA_Bring_Prosperity_Back
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			navy_experience = 40
+			If = {
+				limit = {
+					OR = {
+						has_completed_focus = GMA_call_of_the_wild
+						has_completed_focus = GMA_post_scarcity_anarchism
+					}
+				}
+				custom_effect_tooltip = GMA_Restricted_Fishing_good_tt
+				set_country_flag = GMA_Domestic_Fisheries_Mechanic_Flag
+			}
+			If = {
+				limit = {
+					OR = {
+						has_completed_focus = GMA_Tread_on_the_Snakes
+						has_completed_focus = GMA_Life_Liberty_Happiness
+					}
+				}
+				custom_effect_tooltip = GMA_Restricted_Fishing_bad_tt
+				set_country_flag = GMA_Domestic_Fisheries_Mechanic_Flag
+			}
+		}
+	}
+	focus = {
+		id = GMA_A_Pirate_Navy
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Bring_Prosperity_Back
+		x = -3
+		y = 3
+		cost = 10
+		
+		prerequisite = {
+			focus = GMA_Reopen_Atlantic_Dockyards
+			focus = GMA_Repurpose_Atlantic_Dockyards
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_A_Pirate_Navy_idea
+			set_temp_variable = { 
+					var = military_development_var_temp
+					value = 0.20
+			}
+			add_military_development = yes
+			hidden_effect = {
+				country_event = { id = gma.59 days = 25 }
+			}
+		}
+	}
+	focus = {
+		id = GMA_Revitilize_New_England_Industries
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Bring_Prosperity_Back
+		x = 2
+		y = 1
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Bring_Prosperity_Back
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			every_core_state = {
+				limit = {
+					is_owned_by = GMA
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			set_temp_variable = {
+				var = debt_var_temp
+				value = 10
+			}
+			add_debt_with_inflation = yes
+		}
+	}
+	focus = {
+		id = GMA_The_Guiding_hand_of_the_Free_Market
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Bring_Prosperity_Back
+		x = 0
+		y = 2
+		cost = 10
+		
+		available = {
+			OR = {
+				has_completed_focus = GMA_Tread_on_the_Snakes
+				has_completed_focus = GMA_Life_Liberty_Happiness
+			}
+		}
+		prerequisite = {
+			focus = GMA_Revitilize_New_England_Industries
+		}
+		mutually_exclusive = {
+			focus = GMA_Restart_Industrialization
+			focus = GMA_Introduce_Agricultural_Communes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = GMA_Life_Liberty_Happiness
+					has_war = no
+				}
+				add_ideas = mass_consumerism
+			}
+			add_ideas = higher_trade
+			add_ideas = lower_welfare
+			add_stability = 0.15
+		}
+	}
+		focus = {
+		id = GMA_A_Privatized_Continent
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Bring_Prosperity_Back
+		x = 0
+		y = 3
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_The_Guiding_hand_of_the_Free_Market
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_Continental_Privatization
+		}
+	}
+	focus = {
+		id = GMA_Restart_Industrialization
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Bring_Prosperity_Back
+		x = 2
+		y = 2
+		cost = 10
+		
+		available = {
+			OR = {
+				has_completed_focus = GMA_Tread_on_the_Snakes
+				has_completed_focus = GMA_post_scarcity_anarchism
+				has_completed_focus = GMA_Life_Liberty_Happiness
+			}
+		}
+		prerequisite = {
+			focus = GMA_Revitilize_New_England_Industries
+		}
+		mutually_exclusive = {
+			focus = GMA_The_Guiding_hand_of_the_Free_Market
+			focus = GMA_Introduce_Agricultural_Communes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					is_owned_by = GMA
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_owned_by = GMA
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_owned_by = GMA
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+	focus = {
+		id = GMA_Autarkical_Measures
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Bring_Prosperity_Back
+		x = 2
+		y = 3
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Restart_Industrialization
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_Autarchy
+		}
+	}
+	focus = {
+		id = GMA_Introduce_Agricultural_Communes
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Bring_Prosperity_Back
+		x = 4
+		y = 2
+		cost = 10
+		
+		available = {
+			OR = {
+				has_completed_focus = GMA_call_of_the_wild
+				has_completed_focus = GMA_post_scarcity_anarchism
+			}
+		}
+		prerequisite = {
+			focus = GMA_Revitilize_New_England_Industries
+		}
+		mutually_exclusive = {
+			focus = GMA_The_Guiding_hand_of_the_Free_Market
+			focus = GMA_Restart_Industrialization
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = GMA_Agricultural_Communes
+		}
+	}
+	focus = {
+		id = GMA_Strike_Against_Capitalists
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Bring_Prosperity_Back
+		x = 4
+		y = 3
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Introduce_Agricultural_Communes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = GMA_Agricultural_Communes_2
+				remove_idea = GMA_Agricultural_Communes
+			}
+		}
+	}
+		focus = {
+		id = GMA_The_Second_American_Age_of_Gold
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Bring_Prosperity_Back
+		available = {
+			has_war = no
+			has_country_flag = GMA_United_the_Nation
+		}
+		x = 1
+		y = 4
+		cost = 10
+		
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Autarkical_Measures
+			focus = GMA_A_Privatized_Continent
+		}
+		mutually_exclusive = {
+			focus = GMA_Slay_The_American_Industrial_Oligarchy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = GMA_American_Golden_Age
+				days = 720
+			}
+		}
+	}
+		focus = {
+		id = GMA_Slay_The_American_Industrial_Oligarchy
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Bring_Prosperity_Back
+		x = 3
+		y = 4
+		cost = 10
+		
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Autarkical_Measures
+			focus = GMA_Strike_Against_Capitalists
+		}
+		mutually_exclusive = {
+			focus = GMA_The_Second_American_Age_of_Gold
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_Dismantling_Oligarchy_tt
+			add_timed_idea = {
+				idea = GMA_Dismantling_the_Industrial_Oligarchy
+				days = 240
+			}
+			hidden_effect = {
+				country_event = { id = gma.67 days = 241 }
+			}
+		}
+	}
+	focus = {
+		id = GMA_Capitalize_on_American_Militarism
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_no_compromise_with_statists
+		x = 21
+		y = 0
+		cost = 5
+		
+		available = {
+			or = {
+				has_completed_focus = GMA_Tread_on_the_Snakes
+				has_completed_focus = GMA_call_of_the_wild
+				has_completed_focus = GMA_post_scarcity_anarchism
+				has_completed_focus = GMA_Life_Liberty_Happiness
+			}
+		}
+		prerequisite = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			army_experience = 75
+			add_command_power = 25
+			add_war_support = 0.10
+		}
+	}
+	focus = {
+		id = GMA_Ready_at_a_Minutes_Notice
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Capitalize_on_American_Militarism
+		x = -1
+		y = 1
+		cost = 5
+		
+		available = {
+			
+		}
+		mutually_exclusive = {
+			focus = GMA_Integrate_Irregular_Units
+		}
+		prerequisite = {
+			focus = GMA_Capitalize_on_American_Militarism
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_temp_variable = { 
+					var = military_development_var_temp
+					value = 0.10
+			}
+			add_military_development = yes
+			add_ideas = GMA_Minutemen_Militia_1_idea
+			set_country_flag = GMA_Ready_Minutemen_flag
+			set_country_flag = GMA_Standard_Minutemen_flag
+		}
+	}
+	focus = {
+		id = GMA_Revolutionary_Fervor
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Capitalize_on_American_Militarism
+		x = -3
+		y = 2
+		cost = 5
+		
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Ready_at_a_Minutes_Notice
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = GMA_Minutemen_Militia_1_idea
+				add_idea = GMA_Minutemen_Militia_2_idea
+			}
+			set_country_flag = GMA_Revolutionary_Minutemen_flag
+			clr_country_flag = GMA_Standard_Minutemen_flag
+		}
+	}
+	focus = {
+		id = GMA_Swiss_Standard
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Capitalize_on_American_Militarism
+		x = -1
+		y = 2
+		cost = 5
+		
+		available = {
+			has_army_experience > 50
+		}
+		prerequisite = {
+			focus = GMA_Ready_at_a_Minutes_Notice
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = no_draft_exemptions
+			set_country_flag = GMA_Swiss_Standard_flag
+		}
+	}
+	focus = {
+		id = GMA_Decrease_Regimental_Bureaucracy
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Capitalize_on_American_Militarism
+		x = -2
+		y = 3
+		cost = 5
+		
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Swiss_Standard
+		}
+		prerequisite = {
+			focus = GMA_Revolutionary_Fervor
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = GMA_Minutemen_Militia_2_idea
+				add_idea = GMA_Minutemen_Militia_3_idea
+			}
+		}
+	}
+	focus = {
+		id = GMA_Integrate_Irregular_Units
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Capitalize_on_American_Militarism
+		x = 1
+		y = 1
+		cost = 5
+		
+		available = {
+			
+		}
+		mutually_exclusive = {
+			focus = GMA_Ready_at_a_Minutes_Notice
+		}
+		prerequisite = {
+			focus = GMA_Capitalize_on_American_Militarism
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_temp_variable = { 
+					var = military_development_var_temp
+					value = 0.20
+			}
+			add_military_development = yes
+			add_ideas = GMA_Professionalism_within_the_Army_1
+			delete_unit_template_and_units = {
+				division_template = "Sons of Liberty Militia Brigade"
+				disband = yes
+			}
+		}
+	}
+	focus = {
+		id = GMA_Implement_Equiptment_Regulations
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Capitalize_on_American_Militarism
+		x = 1
+		y = 2
+		cost = 5
+		
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Integrate_Irregular_Units
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {				
+			swap_ideas = {
+				add_idea = GMA_Professionalism_within_the_Army_2
+				remove_idea = GMA_Professionalism_within_the_Army_1
+			}				
+		}
+	}
+	focus = {
+		id = GMA_Increase_Military_Requirements
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Capitalize_on_American_Militarism
+		x = 3
+		y = 2
+		cost = 5
+		
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Integrate_Irregular_Units
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = {
+				higher_supervision
+				highest_training
+			}
+			add_political_power = 75
+		}
+	}
+	focus = {
+		id = GMA_Consolidate_Regimental_Commands
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_Capitalize_on_American_Militarism
+		x = 2
+		y = 3
+		cost = 5
+		
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Implement_Equiptment_Regulations
+		}
+		prerequisite = {
+			focus = GMA_Increase_Military_Requirements
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_command_power = 25
+			swap_ideas = {
+				add_idea = GMA_Professionalism_within_the_Army_3
+				remove_idea = GMA_Professionalism_within_the_Army_2
+			}	
+		}
+	}
+	focus = {
+		id = GMA_One_Goal_One_Nation
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_no_compromise_with_statists
+		x = 27
+		y = 0
+		cost = 5
+		
+		available = {
+			or = {
+				has_completed_focus = GMA_Tread_on_the_Snakes
+				has_completed_focus = GMA_call_of_the_wild
+				has_completed_focus = GMA_post_scarcity_anarchism
+				has_completed_focus = GMA_Life_Liberty_Happiness
+			}
+		}
+		prerequisite = {
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_war_support = 0.15
+		}
+	}
+	focus = {
+		id = GMA_Fortify_the_42nd
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_One_Goal_One_Nation
+		x = -1
+		y = 1
+		cost = 5
+		
+		mutually_exclusive = {
+			focus = GMA_Prepare_the_Philidelphia_Offensive
+		}
+		prerequisite = {
+			focus = GMA_One_Goal_One_Nation
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_Fortify_the_42nd_tt
+			hidden_effect = {
+				1117 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6707
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 9664
+				}
+				}
+				1258 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 11680
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 11650
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6717
+				}
+				}
+				1116 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 9673
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3806
+				}
+				}
+				1078 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 908
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3710
+				}
+				}
+				357 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3906
+				}
+				}
+			}
+		}
+	}
+	focus = {
+		id = GMA_Prepare_the_Philidelphia_Offensive
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_One_Goal_One_Nation
+		x = 1
+		y = 1
+		cost = 5
+		
+		mutually_exclusive = {
+			focus = GMA_Fortify_the_42nd
+		}
+		prerequisite = {
+			focus = GMA_One_Goal_One_Nation
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = GMA_Planning_Philidelphia_Offensive
+				days = 70
+			}
+		}
+	}
+	focus = {
+		id = GMA_Operation_Skewered_Eagle #Attacking Biden
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_One_Goal_One_Nation
+		x = 0
+		y = 2
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Fortify_the_42nd
+			focus = GMA_Prepare_the_Philidelphia_Offensive
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			custom_effect_tooltip = GMA_Attack_Biden_tt
+			set_country_flag = GMA_The_Great_American_Reunification_flag
+		}
+	}
+		focus = {
+		id = GMA_Operation_Gray #Attacking the South
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_One_Goal_One_Nation
+		x = -2
+		y = 3
+		cost = 5
+		
+		available = {
+			has_full_control_of_state = 931
+			
+		}
+		prerequisite = {
+			focus = GMA_Operation_Skewered_Eagle
+		}
+		mutually_exclusive = {
+			focus = GMA_Operation_Red
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = GMA_Operation_Gray
+				days = 70
+			}
+		}
+	}
+	focus = {
+		id = GMA_Operation_Gold #Texas Buffs
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_One_Goal_One_Nation
+		x = -2
+		y = 4
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Operation_Gray
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = GMA_Operation_Gold
+				days = 70
+			}
+		}
+	}
+	focus = {
+		id = GMA_Operation_Red #Attacking Trump
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_One_Goal_One_Nation
+		x = 0
+		y = 3
+		cost = 5
+		
+		available = {
+			has_full_control_of_state = 931
+		}
+		prerequisite = {
+			focus = GMA_Operation_Skewered_Eagle
+		}
+		mutually_exclusive = {
+			focus = GMA_Operation_Gray
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = GMA_Operation_Red
+				days = 70
+			}
+		}
+	}
+	focus = {
+		id = GMA_Operation_Crimson #Buffs Against Rockies Nations
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_One_Goal_One_Nation
+		x = 0
+		y = 4
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Operation_Red
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = GMA_Operation_Crimson
+				days = 70
+			}
+		}
+	}
+		focus = {
+		id = GMA_Revive_the_Diplomatic_Corps
+		icon = GFX_focus_
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		relative_position_id = GMA_One_Goal_One_Nation
+		x = 2
+		y = 3
+		cost = 5
+		
+		prerequisite = {
+			focus = GMA_Operation_Skewered_Eagle
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_Diplomatic_corps_tt
+			set_country_flag = GMA_Diplomatic_corps_flag
+		}
+	}
+	focus = {
+		id = GMA_Here_Comes_the_Johnson
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 21
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_no_compromise_with_statists
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_America_Deserves_Better
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 5
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Here_Comes_the_Johnson
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_A_Gold_New_Deal
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 6
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_America_Deserves_Better
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Capitalism_in_its_Purest_form
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 7
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_A_Gold_New_Deal
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Found_the_Hospers_Society
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 8
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Capitalism_in_its_Purest_form
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Restore_the_New_York_Skyline
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 6
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Capitalism_in_its_Purest_form
+		}
+		prerequisite = {
+			focus = GMA_Revive_the_American_Dream
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Empower_the_Next_Generation_of_Liberty
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 8
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Found_the_Hospers_Society
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Cement_the_NAP
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 3
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_America_Deserves_Better
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Birth_of_The_Libertarian_Dream
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 1
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Cement_the_NAP
+		}
+		mutually_exclusive = {
+			focus = GMA_Revive_the_American_Dream
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_American_Exceptionalism
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 2
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Birth_of_The_Libertarian_Dream
+			focus = GMA_Revive_the_American_Dream
+		}
+		mutually_exclusive = {
+
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Revive_the_American_Dream
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 5
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Cement_the_NAP
+		}
+		prerequisite = {
+			focus = GMA_A_Gold_New_Deal
+		}
+		mutually_exclusive = {
+			focus = GMA_Birth_of_The_Libertarian_Dream
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Reignite_the_Industrial_Sector
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 4
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Revive_the_American_Dream
+			focus = GMA_Birth_of_The_Libertarian_Dream
+		}
+		mutually_exclusive = {
+
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Libertarian_Nationalism
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 3
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_American_Exceptionalism
+		}
+		prerequisite = {
+			focus = GMA_Reignite_the_Industrial_Sector
+		}
+		mutually_exclusive = {
+
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Crush_Climate_Extremists
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 5
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Reignite_the_Industrial_Sector
+		}
+		mutually_exclusive = {
+
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Blood_Steel_and_Gold
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 4
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Libertarian_Nationalism
+		}
+		prerequisite = {
+			focus = GMA_Crush_Climate_Extremists
+		}
+		mutually_exclusive = {
+
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Great_American_Melting_Pot
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -3
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Here_Comes_the_Johnson
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Guarantee_All_Political_Freedoms
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -4
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Great_American_Melting_Pot
+		}
+		mutually_exclusive = {
+			focus = GMA_Crackdown_on_Extremist_Groups
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Crackdown_on_Extremist_Groups
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -2
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Great_American_Melting_Pot
+		}
+		mutually_exclusive = {
+			focus = GMA_Guarantee_All_Political_Freedoms
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_The_Golden_Rule
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -3
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Guarantee_All_Political_Freedoms
+			focus = GMA_Crackdown_on_Extremist_Groups
+		}
+		mutually_exclusive = {
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_A_Continent_of_Gold
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -2
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_The_Golden_Rule
+		}
+		prerequisite = {
+			focus = GMA_Revive_the_American_Dream
+			focus = GMA_Birth_of_The_Libertarian_Dream
+		}
+		mutually_exclusive = {
+			focus = GMA_Splendid_Isolation
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Stabilize_the_Mexican_Markets
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -3
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_A_Continent_of_Gold
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Pacify_Central_America
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -3
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Stabilize_the_Mexican_Markets
+		}
+		mutually_exclusive = {
+			focus = GMA_Central_American_Investments
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Splendid_Isolation
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 0
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_The_Golden_Rule
+		}
+		prerequisite = {
+			focus = GMA_Revive_the_American_Dream
+			focus = GMA_Birth_of_The_Libertarian_Dream
+		}
+		mutually_exclusive = {
+			focus = GMA_A_Continent_of_Gold
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Rekindle_the_Economic_Dependants
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -1
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Splendid_Isolation
+			focus = GMA_A_Continent_of_Gold
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Central_American_Investments
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -1
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Rekindle_the_Economic_Dependants
+		}
+		mutually_exclusive = {
+			focus = GMA_Pacify_Central_America
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Demand_Albertan_Oil
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -2
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Central_American_Investments
+			focus = GMA_Pacify_Central_America
+		}
+		mutually_exclusive = {
+			focus = GMA_Aid_Canadian_Republicans
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Lay_Down_the_Stick
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 1
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Splendid_Isolation
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Peace_Liberty_and_Bread_Doctrine
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 1
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Lay_Down_the_Stick
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Aid_Canadian_Republicans
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 0
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Here_Comes_the_Johnson
+		allow_branch = {
+			has_country_flag = GMA_COFAR_Johnson_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Peace_Liberty_and_Bread_Doctrine
+		}
+		mutually_exclusive = {
+			focus = GMA_Demand_Albertan_Oil
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Honor_the_Boogaloo
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 21
+		y = 6
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_no_compromise_with_statists
+		allow_branch = {
+			has_country_flag = GMA_COFAR_McAfee_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Build_the_Igloo
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -3
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Honor_the_Boogaloo
+		allow_branch = {
+			has_country_flag = GMA_COFAR_McAfee_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Honor_the_Boogaloo
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Crush_the_Supremacists
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -2
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Honor_the_Boogaloo
+		allow_branch = {
+			has_country_flag = GMA_COFAR_McAfee_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Build_the_Igloo
+		}
+		mutually_exclusive = {
+			focus = GMA_Entrench_freedom_of_thought
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Entrench_freedom_of_thought
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -4
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Honor_the_Boogaloo
+		allow_branch = {
+			has_country_flag = GMA_COFAR_McAfee_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Build_the_Igloo
+		}
+		mutually_exclusive = {
+			focus = GMA_Crush_the_Supremacists
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Equality_Achieved
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -5
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Honor_the_Boogaloo
+		allow_branch = {
+			has_country_flag = GMA_COFAR_McAfee_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Entrench_freedom_of_thought
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Boogaloo_Nepotism
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -3
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Honor_the_Boogaloo
+		allow_branch = {
+			has_country_flag = GMA_COFAR_McAfee_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Entrench_freedom_of_thought
+			focus = GMA_Crush_the_Supremacists
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Aloha_America
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 5
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Honor_the_Boogaloo
+		allow_branch = {
+			has_country_flag = GMA_COFAR_McAfee_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Honor_the_Boogaloo
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Prioritize_American_Security
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 3
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Honor_the_Boogaloo
+		allow_branch = {
+			has_country_flag = GMA_COFAR_McAfee_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Aloha_America
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Plant_the_Tree_of_Liberty
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 6
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Honor_the_Boogaloo
+		allow_branch = {
+			has_country_flag = GMA_COFAR_McAfee_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Aloha_America
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Entrench_Distrust
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 1
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Honor_the_Boogaloo
+		allow_branch = {
+			has_country_flag = GMA_COFAR_McAfee_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Prioritize_American_Security
+		}
+		mutually_exclusive = {
+			focus = GMA_A_Government_you_can_Trust
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_A_Government_you_can_Trust
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 5
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Honor_the_Boogaloo
+		allow_branch = {
+			has_country_flag = GMA_COFAR_McAfee_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Prioritize_American_Security
+		}
+		prerequisite = {
+			focus = GMA_Plant_the_Tree_of_Liberty
+		}
+		mutually_exclusive = {
+			focus = GMA_Entrench_Distrust
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_The_Outcome_of_All_Governments
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 7
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Honor_the_Boogaloo
+		allow_branch = {
+			has_country_flag = GMA_COFAR_McAfee_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Plant_the_Tree_of_Liberty
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Found_the_Murray_Rothbard_Academic_Society
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 8
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Honor_the_Boogaloo
+		allow_branch = {
+			has_country_flag = GMA_COFAR_McAfee_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_The_Outcome_of_All_Governments
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Privatize_the_Education_Sector
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 8
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		relative_position_id = GMA_Honor_the_Boogaloo
+		allow_branch = {
+			has_country_flag = GMA_COFAR_McAfee_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Found_the_Murray_Rothbard_Academic_Society
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Revere_the_Holy_Mother
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 21
+		y = 6
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_no_compromise_with_statists
+		allow_branch = {
+			has_country_flag = GMA_SUG_Simos_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Eisenhowers_Nightmare
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 21
+		y = 6
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_no_compromise_with_statists
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Expand_the_Pan_American_Mercantile_Guild
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 8
+		y = 1
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_global_flag = USA_american_civil_war_over_global
+		}
+		prerequisite = {
+			focus = GMA_Eisenhowers_Nightmare
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Demand_Panama_Canal
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 3
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Expand_the_Pan_American_Mercantile_Guild
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_Panama_Canal_tt
+			if = {
+				limit = {
+					PAN = {
+						country_exists = yes
+					}
+				}
+				PAN = {
+					country_event = { #Panama Canal
+						id = gma.731
+						days = 5
+					}
+				}
+			}
+			if = {
+				limit = {
+					ELS = {
+						country_exists = yes
+					}
+				}
+				ELS = {
+					country_event = { #Panama Canal
+						id = gma.732
+						days = 5
+					}
+				}
+			}
+			if = {
+				limit = {
+					NIC = {
+						country_exists = yes
+					}
+				}
+				NIC = {
+					country_event = { #Panama Canal
+						id = gma.733
+						days = 5
+					}
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = GMA_Seize_European_Colonies
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 4
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Demand_Panama_Canal
+		}
+		completion_reward = {
+			set_country_flag = GMA_European_Colonies_flag
+			custom_effect_tooltip = GMA_European_Colonies_tt
+		}
+
+	}
+	focus = {
+		id = GMA_Pacify_the_Mexican_Wasteland
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 2
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Demand_Panama_Canal
+		}
+		completion_reward = {
+			set_country_flag = GMA_Mexican_Pacification_flag
+			custom_effect_tooltip = GMA_Mexican_Pacification_tt
+		}
+
+	}
+	focus = {
+		id = GMA_Negotiate_Investments_into_Canada
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 10
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Expand_the_Pan_American_Mercantile_Guild
+		}
+		mutually_exclusive = {
+			focus = GMA_Demand_the_Alaskan_Corridor
+		}
+		completion_reward = {
+			set_country_flag = GMA_Canadian_Investments_flag
+			custom_effect_tooltip = GMA_Canadian_Investments_tt
+		}
+
+	}
+	focus = {
+		id = GMA_Simplify_American_Trade
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 10
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Negotiate_Investments_into_Canada
+		}
+		
+		completion_reward = {
+			set_country_flag = GMA_American_Trade_flag
+			custom_effect_tooltip = GMA_American_Trade_tt
+		}
+
+	}
+	focus = {
+		id = GMA_Demand_Greenland_Protectorate
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 12
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Negotiate_Investments_into_Canada
+			focus = GMA_Demand_the_Alaskan_Corridor
+		}
+		completion_reward = {
+			DEN = {
+				country_event = { #Greenland Deal
+					id = gma.74
+					days = 5
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = GMA_Demand_the_Alaskan_Corridor
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 7
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Expand_the_Pan_American_Mercantile_Guild
+		}
+		mutually_exclusive = {
+			focus = GMA_Negotiate_Investments_into_Canada
+		}
+		completion_reward = {
+			CAN = {
+				country_event = { #British Colombia
+					id = gma.75
+					days = 5
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = GMA_Pacify_Halifax
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 6
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Demand_the_Alaskan_Corridor
+		}
+		mutually_exclusive = {
+			focus = GMA_Pacify_Montreal
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Pacify_Montreal
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 8
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Demand_the_Alaskan_Corridor
+		}
+		mutually_exclusive = {
+			focus = GMA_Pacify_Halifax
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Nationalize_Profitable_Security_Firms
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -4
+		y = 1
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Eisenhowers_Nightmare
+		}
+		mutually_exclusive = {
+			focus = GMA_Empower_the_Military_Industrial_Complex
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Empower_the_Military_Industrial_Complex
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -2
+		y = 1
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Eisenhowers_Nightmare
+		}
+		mutually_exclusive = {
+			focus = GMA_Nationalize_Profitable_Security_Firms
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Unify_the_Market
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -5
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Nationalize_Profitable_Security_Firms
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Corner_Competitors
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -5
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Unify_the_Market
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Project_Leapyear
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -3
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Nationalize_Profitable_Security_Firms
+			focus = GMA_Empower_the_Military_Industrial_Complex
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Coddle_the_Old_Oligarchy
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -1
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Empower_the_Military_Industrial_Complex
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Control_Economic_Competition
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -1
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Eisenhowers_Nightmare
+		allow_branch = {
+			has_country_flag = GMA_PMC_Heben_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Coddle_the_Old_Oligarchy
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+
+	}
+	focus = {
+		id = GMA_Implementation_of_the_Manifesto
+		icon = GFX_focus_GMA_Implementation_of_Manifesto
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 21
+		y = 6
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_no_compromise_with_statists
+		allow_branch = {
+			has_country_flag = GMA_TH_Kaczynski_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_country_leader = {
+				character = GMA_Ted_Kaczynski_char
+				ruling_only = yes
+			}
+		}
+		prerequisite = {
+			
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			add_political_power = 75
+			set_country_flag = GMA_Manifesto_Decisions_flag
+			hidden_effect = {
+				country_event = { #Ted gets cancer
+					id = gma.54
+					days = 150
+				}
+			}
+		}
+
+	}
+	focus = {
+		id = GMA_Encourage_Technophobia
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -2
+		y = 1
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Implementation_of_the_Manifesto
+		allow_branch = {
+			has_country_flag = GMA_TH_Kaczynski_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_country_leader = {
+				character = GMA_Ted_Kaczynski_char
+				ruling_only = yes
+			}
+			has_completed_focus = GMA_vanguard_of_anti_technology
+		}
+		prerequisite = {
+			focus = GMA_Implementation_of_the_Manifesto
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_Technophobia_tt
+			set_country_flag = GMA_Technophobia_flag
+		}
+
+	}
+	focus = {
+		id = GMA_Execute_Executives
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -3
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Implementation_of_the_Manifesto
+		allow_branch = {
+			has_country_flag = GMA_TH_Kaczynski_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_country_leader = {
+				character = GMA_Ted_Kaczynski_char
+				ruling_only = yes
+			}
+		}
+		prerequisite = {
+			focus = GMA_Encourage_Technophobia
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_Executing_execs_tt
+			hidden_effect = {
+				country_event = { id = gma.69 days = 5 } #Bloomberg Execution
+				country_event = { id = gma.691 days = 10 } #Gates Execution
+				country_event = { id = gma.692 days = 25 } #Zuckerberg Execution
+			}
+		}
+
+	}
+	focus = {
+		id = GMA_Dismember_Silicon_Valley
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -2
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Implementation_of_the_Manifesto
+		allow_branch = {
+			has_country_flag = GMA_TH_Kaczynski_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_country_leader = {
+				character = GMA_Ted_Kaczynski_char
+				ruling_only = yes
+			}
+			has_full_control_of_state = 932
+		}
+		prerequisite = {
+			focus = GMA_Execute_Executives
+		}
+		mutually_exclusive = {
+			focus = GMA_Refocus_the_Intelligentsia
+		}
+		completion_reward = {
+			country_event = { id = gma.70 days = 5 } #Slaughter of Silicon Valley
+		}
+
+	}
+	focus = {
+		id = GMA_Refocus_the_Intelligentsia
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -4
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Implementation_of_the_Manifesto
+		allow_branch = {
+			has_country_flag = GMA_TH_Kaczynski_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_country_leader = {
+				character = GMA_Ted_Kaczynski_char
+				ruling_only = yes
+			}
+		}
+		prerequisite = {
+			focus = GMA_Execute_Executives
+		}
+		mutually_exclusive = {
+			focus = GMA_Dismember_Silicon_Valley
+		}
+		completion_reward = {
+			add_ideas = GMA_Luddite_Intelligentsia
+		}
+
+	}
+	focus = {
+		id = GMA_Demand_Simplicity
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 2
+		y = 1
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Implementation_of_the_Manifesto
+		allow_branch = {
+			has_country_flag = GMA_TH_Kaczynski_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_country_leader = {
+				character = GMA_Ted_Kaczynski_char
+				ruling_only = yes
+			}
+		}
+		prerequisite = {
+			focus = GMA_Implementation_of_the_Manifesto
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			custom_effect_tooltip = GMA_Simple_Living_tt
+			set_country_flag = GMA_Simplistic_Policies_flag
+		}
+
+	}
+	focus = {
+		id = GMA_Strangle_Opposition
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -1
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Implementation_of_the_Manifesto
+		allow_branch = {
+			has_country_flag = GMA_TH_Kaczynski_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_country_leader = {
+				character = GMA_Ted_Kaczynski_char
+				ruling_only = yes
+			}
+		}
+		prerequisite = {
+			focus = GMA_Encourage_Technophobia
+		}
+		prerequisite = {
+			focus = GMA_Demand_Simplicity
+		}
+		mutually_exclusive = {
+			focus = GMA_Control_Kaczynskite_Opposition
+		}
+		completion_reward = {
+			country_event = { id = gma.71 days = 3 } #Banning of all Political Organizations
+		}
+
+	}
+	focus = {
+		id = GMA_Control_Kaczynskite_Opposition
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 1
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Implementation_of_the_Manifesto
+		allow_branch = {
+			has_country_flag = GMA_TH_Kaczynski_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_country_leader = {
+				character = GMA_Ted_Kaczynski_char
+				ruling_only = yes
+			}
+		}
+		prerequisite = {
+			focus = GMA_Encourage_Technophobia
+		}
+		prerequisite = {
+			focus = GMA_Demand_Simplicity
+		}
+		mutually_exclusive = {
+			focus = GMA_Strangle_Opposition
+		}
+		completion_reward = {
+			country_event = { id = gma.711 days = 3 } #Propping up Opposition
+		}
+
+	}
+	focus = {
+		id = GMA_Not_A_Nation_A_Tidalwave
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 0
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Implementation_of_the_Manifesto
+		allow_branch = {
+			has_country_flag = GMA_TH_Kaczynski_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_country_leader = {
+				character = GMA_Ted_Kaczynski_char
+				ruling_only = yes
+			}
+		}
+		prerequisite = {
+			focus = GMA_Strangle_Opposition
+			focus = GMA_Control_Kaczynskite_Opposition
+		}
+		completion_reward = {
+			add_ideas = GMA_Tidalwave_Fanaticism
+			news_event = { #The Announcement to the world
+				id = gma_news.6
+				days = 5
+			}
+		}
+
+	}
+	focus = {
+		id = GMA_Take_Only_what_is_Needed
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 3
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Implementation_of_the_Manifesto
+		allow_branch = {
+			has_country_flag = GMA_TH_Kaczynski_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_country_leader = {
+				character = GMA_Ted_Kaczynski_char
+				ruling_only = yes
+			}
+		}
+		prerequisite = {
+			focus = GMA_Demand_Simplicity
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			add_ideas = GMA_Sustainable_Development_idea
+		}
+
+	}
+	focus = {
+		id = GMA_Militarize_the_Park_Rangers
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 2
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Implementation_of_the_Manifesto
+		allow_branch = {
+			has_country_flag = GMA_TH_Kaczynski_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_country_leader = {
+				character = GMA_Ted_Kaczynski_char
+				ruling_only = yes
+			}
+		}
+		prerequisite = {
+			focus = GMA_Take_Only_what_is_Needed
+		}
+		mutually_exclusive = {
+			focus = GMA_Absorb_the_Park_Rangers
+		}
+		completion_reward = {
+			load_oob = "GMA_Militarized_Park_Rangers"
+		}
+
+	}
+	focus = {
+		id = GMA_Absorb_the_Park_Rangers
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 4
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Implementation_of_the_Manifesto
+		allow_branch = {
+			has_country_flag = GMA_TH_Kaczynski_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			has_country_leader = {
+				character = GMA_Ted_Kaczynski_char
+				ruling_only = yes
+			}
+		}
+		prerequisite = {
+			focus = GMA_Take_Only_what_is_Needed
+		}
+		mutually_exclusive = {
+			focus = GMA_Militarize_the_Park_Rangers
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = GMA_Park_Rangers_Intergration
+				days = 90
+			}
+		}
+
+	}
+	focus = {
+		id = GMA_Continue_His_Plan
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 21
+		y = 10
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_no_compromise_with_statists
+		allow_branch = {
+			has_country_flag = GMA_TH_Knight_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			add_stability = 0.15
+		}
+	}
+	focus = {
+		id = GMA_A_Step_too_Far_is_Still_a_Step_Forward
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 21
+		y = 10
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_no_compromise_with_statists
+		allow_branch = {
+			has_country_flag = GMA_TH_Zerzan_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			set_cosmetic_tag = GMA_TH_AnPrim
+		}
+	}
+	focus = {
+		id = GMA_Demilitarize_The_Vanguard
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 21
+		y = 10
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_no_compromise_with_statists
+		allow_branch = {
+			has_country_flag = GMA_TH_Coronado_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			set_cosmetic_tag = GMA_TH_Military
+		}
+	}
+	focus = {
+		id = GMA_Disband_the_Vanguard
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 21
+		y = 10
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_no_compromise_with_statists
+		allow_branch = {
+			has_country_flag = GMA_TH_Failstate_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			set_cosmetic_tag = GMA_GMAC_Reborn
+		}
+	}
+	focus = {
+		id = GMA_Eliminate_Primitivist_Ideologues
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -4
+		y = 1
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Disband_the_Vanguard
+		allow_branch = {
+			has_country_flag = GMA_TH_Failstate_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Disband_the_Vanguard
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GMA_Sack_Kaczynski_Revisionists
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -5
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Disband_the_Vanguard
+		allow_branch = {
+			has_country_flag = GMA_TH_Failstate_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Eliminate_Primitivist_Ideologues
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			set_cosmetic_tag = GMA_GMAC_Reborn
+		}
+	}
+	focus = {
+		id = GMA_Promote_Deusenist_Survivors
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -3
+		y = 2
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Disband_the_Vanguard
+		allow_branch = {
+			has_country_flag = GMA_TH_Failstate_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Eliminate_Primitivist_Ideologues
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GMA_Operation_Chainsaw
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -4
+		y = 3
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Disband_the_Vanguard
+		allow_branch = {
+			has_country_flag = GMA_TH_Failstate_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Eliminate_Primitivist_Ideologues
+		}
+		prerequisite = {
+			focus = GMA_Promote_Deusenist_Survivors
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GMA_Birth_of_Deusenistic_Anarchism
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 5
+		y = 1
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Disband_the_Vanguard
+		allow_branch = {
+			has_country_flag = GMA_TH_Failstate_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Disband_the_Vanguard
+		}
+		mutually_exclusive = {
+			
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GMA_Compartmentalize_the_Nation
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -3
+		y = 1
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Birth_of_Deusenistic_Anarchism
+		allow_branch = {
+			has_country_flag = GMA_TH_Failstate_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Birth_of_Deusenistic_Anarchism
+		}
+		mutually_exclusive = {
+			focus = GMA_One_Collective_Idea
+		}
+		mutually_exclusive = {
+			focus = GMA_Treaty_with_the_Western_Anarchists
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GMA_One_Collective_Idea
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = -1
+		y = 1
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Birth_of_Deusenistic_Anarchism
+		allow_branch = {
+			has_country_flag = GMA_TH_Failstate_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Birth_of_Deusenistic_Anarchism
+		}
+		mutually_exclusive = {
+			focus = GMA_Compartmentalize_the_Nation
+		}
+		mutually_exclusive = {
+			focus = GMA_Treaty_with_the_Western_Anarchists
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GMA_Treaty_with_the_Western_Anarchists
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 1
+		y = 1
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Birth_of_Deusenistic_Anarchism
+		allow_branch = {
+			has_country_flag = GMA_TH_Failstate_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		mutually_exclusive = {
+			focus = GMA_Compartmentalize_the_Nation
+		}
+		mutually_exclusive = {
+			focus = GMA_One_Collective_Idea
+		}
+		prerequisite = {
+			focus = GMA_Birth_of_Deusenistic_Anarchism
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GMA_Ideolization_of_Deusen
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 3
+		y = 1
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Birth_of_Deusenistic_Anarchism
+		allow_branch = {
+			has_country_flag = GMA_TH_Failstate_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Birth_of_Deusenistic_Anarchism
+		}
+		mutually_exclusive = {
+			focus = GMA_Idolization_of_the_People
+		}
+		completion_reward = {
+			
+		}
+	}
+	focus = {
+		id = GMA_Ideolization_of_the_People
+		icon = GFX_focus_APA_the_vanguard_party
+		search_filters = {
+			FOCUS_FILTER_WAR_SUPPORT
+		}
+		x = 5
+		y = 1
+		cost = 2
+		available_if_capitulated = yes
+		relative_position_id = GMA_Birth_of_Deusenistic_Anarchism
+		allow_branch = {
+			has_country_flag = GMA_TH_Failstate_FT
+		}
+		ai_will_do = {
+			factor = 5
+		}
+		available = {
+			
+		}
+		prerequisite = {
+			focus = GMA_Birth_of_Deusenistic_Anarchism
+		}
+		mutually_exclusive = {
+			focus = GMA_Idolization_of_Deusen
+		}
+		completion_reward = {
+			
+		}
+	}
+
+}	
+

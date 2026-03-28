@@ -1,0 +1,40 @@
+animation = {
+	name = "heavy_autogun_pa_attack_animation"
+	file = "heavy_autogun_pa_attack.anim"
+}
+
+animation = {
+	name = "heavy_autogun_pa_idle_animation"
+	file = "heavy_autogun_pa_idle.anim"
+}
+
+animation = {
+	name = "heavy_autogun_pa_moving_animation"
+	file = "heavy_autogun_pa_moving.anim"
+}
+
+animation = {
+	name = "heavy_autogun_pa_assault_animation"
+	file = "heavy_autogun_pa_attack.anim"
+}
+
+animation = {
+	name = "bolter_pa_attack_animation"
+	file = "bolter_pa_attack.anim"
+}
+
+animation = {
+	name = "bolter_pa_idle_animation"
+	file = "bolter_pa_idle.anim"
+}
+
+animation = {
+	name = "bolter_pa_moving_animation"
+	file = "bolter_pa_moving.anim"
+}
+
+animation = {
+	name = "bolter_pa_assault_animation"
+	file = "bolter_pa_attack.anim"
+}
+

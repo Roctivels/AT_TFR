@@ -1,0 +1,13 @@
+objectTypes = {
+
+	pdxmesh = {
+		name = "PRC_Gundam_mesh"
+		file = "gfx/models/units/PRC_Gundam/PRC_Gundam.mesh"  
+		
+		animation = { id = "attack"			type = "BRT_knightmare_frame_attack_animation" }
+		animation = { id = "idle"			type = "BRT_knightmare_frame_idle_animation" }
+		animation = { id = "move"			type = "BRT_knightmare_frame_moving_animation" }
+		scale = 0.65
+	}	
+	
+}

@@ -1,0 +1,79 @@
+
+####
+# TFR - LIGHT CRUISER
+####
+
+animation = {
+	name = "TFR_generic_destroyer_attack_animation"
+	file = "TFR_generic_destroyer_attack.anim"
+}
+
+animation = {
+	name = "TFR_generic_destroyer_combat_idle_animation"
+	file = "TFR_generic_destroyer_combat_idle.anim"
+}
+
+animation = {
+	name = "TFR_generic_destroyer_death_animation"
+	file = "TFR_generic_destroyer_death.anim"
+}
+
+animation = {
+	name = "TFR_generic_destroyer_defend_animation"
+	file = "TFR_generic_destroyer_defend.anim"
+}
+
+animation = {
+	name = "TFR_generic_destroyer_idle_animation"
+	file = "TFR_generic_destroyer_idle.anim"
+}
+
+animation = {
+	name = "TFR_generic_battleship_attack_animation"
+	file = "TFR_generic_battleship_attack.anim"
+}
+
+animation = {
+	name = "TFR_generic_battleship_combat_idle_animation"
+	file = "TFR_generic_battleship_combat_idle.anim"
+}
+
+animation = {
+	name = "TFR_generic_battleship_death_animation"
+	file = "TFR_generic_battleship_death.anim"
+}
+
+animation = {
+	name = "TFR_generic_battleship_defend_animation"
+	file = "TFR_generic_battleship_defend.anim"
+}
+
+animation = {
+	name = "TFR_generic_battleship_idle_animation"
+	file = "TFR_generic_battleship_idle.anim"
+}
+
+animation = {
+	name = "TFR_generic_light_cruiser_attack_animation"
+	file = "TFR_generic_light_cruiser_attack.anim"
+}
+
+animation = {
+	name = "TFR_generic_light_cruiser_combat_idle_animation"
+	file = "TFR_generic_light_cruiser_combat_idle.anim"
+}
+
+animation = {
+	name = "TFR_generic_light_cruiser_death_animation"
+	file = "TFR_generic_light_cruiser_death.anim"
+}
+
+animation = {
+	name = "TFR_generic_light_cruiser_defend_animation"
+	file = "TFR_generic_light_cruiser_defend.anim"
+}
+
+animation = {
+	name = "TFR_generic_light_cruiser_idle_animation"
+	file = "TFR_generic_light_cruiser_idle.anim"
+}

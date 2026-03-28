@@ -1,0 +1,55 @@
+USB_SAC_01
+{
+	name = "Special Activities Center Regiment"
+
+	for_countries = { USB }
+
+	can_use = { has_completed_focus = USB_bring_order_to_chaos }
+
+	division_types = { "infantry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { USA_INF_01 }
+
+	fallback_name = "%d SAC Regiment"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%dst SAC Regiment 'Culper'" }
+		2 = { "%dnd SAC Regiment 'Cipher'" }
+		3 = { "%drd SAC Regiment 'Grey Fox'" }
+		4 = { "%dth SAC Regiment 'Spear of Discretion'" }
+		5 = { "%dth SAC Regiment 'Wetworks'" }
+		6 = { "%dth SAC Regiment 'Manticore'" }
+		7 = { "%dth SAC Regiment 'Dark Horse'" }
+		8 = { "%dth SAC Regiment 'Eyes and Ears'" }
+		9 = { "%dth SAC Regiment 'Demiurge'" }
+		10 = { "%dth SAC Regiment 'Dark Star'" }
+		11 = { "%dth SAC Regiment 'Blackwatch'" }
+		12 = { "%dth SAC Regiment 'The Shield'" }
+		13 = { "%dth SAC Regiment 'Euphrates Shadow'" }
+		14 = { "%dth SAC Regiment 'Babylon'" }
+		15 = { "%dth SAC Regiment 'Desert Storm'" }
+		16 = { "%dth SAC Regiment 'Ouroboros'" }
+		17 = { "%dth SAC Regiment 'Peace Be Unto You'" }
+		18 = { "%dth SAC Regiment 'Waco Blues'" }
+		19 = { "%dth SAC Regiment 'Sword of Order'" }
+		20 = { "%dth SAC Regiment 'Luxor Necropolitics'" }
+		21 = { "%dst SAC Regiment 'Pandora's Box'" }
+		22 = { "%dnd SAC Regiment 'Torchlight'" }
+		23 = { "%drd SAC Regiment 'Cleansing Fire'" }
+		24 = { "%dth SAC Regiment 'Black Hand'" }
+		25 = { "%dth SAC Regiment 'Excalibur'" }
+		26 = { "%dth SAC Regiment 'Gladio'" }
+		27 = { "%dth SAC Regiment 'Pied Piper'" }
+		28 = { "%dth SAC Regiment 'Black Death'" }
+		29 = { "%dth SAC Regiment 'Necessary Evil'" }
+		30 = { "%dth SAC Regiment 'Sword and Scepter'" }
+		31 = { "%dst SAC Regiment 'Able Archer'" }
+		32 = { "%dnd SAC Regiment 'Grendel'" }
+		33 = { "%drd SAC Regiment 'Trauma Loop'" }
+		
+	}
+}

@@ -1,0 +1,100 @@
+
+continent = {
+    name = north_america
+    operative = {
+        female = {
+            "gfx/leaders/Europe/operative_female_1.png"
+            "gfx/leaders/Europe/operative_female_2.png"
+            "gfx/leaders/Europe/operative_female_3.png"
+        }
+        male = {
+            "gfx/leaders/Europe/operative_male_1.png"
+            "gfx/leaders/Europe/operative_male_2.png"
+            "gfx/leaders/Europe/operative_male_3.png"
+            "gfx/leaders/Europe/operative_male_4.png"
+            "gfx/leaders/Europe/operative_male_5.png"
+            "gfx/leaders/Europe/operative_male_6.png"
+            "gfx/leaders/Europe/operative_male_7.png"
+            "gfx/leaders/Europe/operative_male_8.png"
+            "gfx/leaders/Europe/operative_male_9.png"
+            "gfx/leaders/Europe/operative_male_10.png"
+            "gfx/leaders/Europe/operative_male_11.png"
+            "gfx/leaders/Europe/operative_male_12.png"
+            "gfx/leaders/Europe/operative_male_13.png"
+            "gfx/leaders/Europe/operative_male_14.png"
+            "gfx/leaders/Europe/operative_male_15.png"
+            "gfx/leaders/Europe/operative_male_16.png"
+            "gfx/leaders/Europe/operative_male_17.png"
+        }
+    }
+}
+
+continent = {
+    name = europe
+    operative = {
+        female = {
+            "gfx/leaders/Europe/operative_female_1.png"
+            "gfx/leaders/Europe/operative_female_2.png"
+            "gfx/leaders/Europe/operative_female_3.png"
+        }
+        male = {
+            "gfx/leaders/Europe/operative_male_1.png"
+            "gfx/leaders/Europe/operative_male_2.png"
+            "gfx/leaders/Europe/operative_male_3.png"
+            "gfx/leaders/Europe/operative_male_4.png"
+            "gfx/leaders/Europe/operative_male_5.png"
+            "gfx/leaders/Europe/operative_male_6.png"
+            "gfx/leaders/Europe/operative_male_7.png"
+            "gfx/leaders/Europe/operative_male_8.png"
+            "gfx/leaders/Europe/operative_male_9.png"
+            "gfx/leaders/Europe/operative_male_10.png"
+            "gfx/leaders/Europe/operative_male_11.png"
+            "gfx/leaders/Europe/operative_male_12.png"
+            "gfx/leaders/Europe/operative_male_13.png"
+            "gfx/leaders/Europe/operative_male_14.png"
+            "gfx/leaders/Europe/operative_male_15.png"
+            "gfx/leaders/Europe/operative_male_16.png"
+            "gfx/leaders/Europe/operative_male_17.png"
+        }
+    }
+}
+
+continent = {
+    name = australia
+    operative = {
+        female = {
+            "gfx/leaders/Europe/operative_female_1.png"
+            "gfx/leaders/Europe/operative_female_2.png"
+            "gfx/leaders/Europe/operative_female_3.png"
+        }
+        male = {
+            "gfx/leaders/Europe/operative_male_1.png"
+            "gfx/leaders/Europe/operative_male_2.png"
+            "gfx/leaders/Europe/operative_male_3.png"
+            "gfx/leaders/Europe/operative_male_4.png"
+            "gfx/leaders/Europe/operative_male_5.png"
+            "gfx/leaders/Europe/operative_male_6.png"
+            "gfx/leaders/Europe/operative_male_7.png"
+            "gfx/leaders/Europe/operative_male_8.png"
+            "gfx/leaders/Europe/operative_male_9.png"
+            "gfx/leaders/Europe/operative_male_10.png"
+            "gfx/leaders/Europe/operative_male_11.png"
+            "gfx/leaders/Europe/operative_male_12.png"
+            "gfx/leaders/Europe/operative_male_13.png"
+            "gfx/leaders/Europe/operative_male_14.png"
+            "gfx/leaders/Europe/operative_male_15.png"
+            "gfx/leaders/Europe/operative_male_16.png"
+            "gfx/leaders/Europe/operative_male_17.png"
+        }
+    }
+
+
+    continent = {
+        name = asia
+        operative = {
+            male = {
+                "gfx/leaders/Asia/operative_male_1.png"
+            }
+        }
+    }
+}

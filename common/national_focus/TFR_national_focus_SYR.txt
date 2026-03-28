@@ -1,0 +1,1650 @@
+# focus_tree = {
+# 	id = SYR_focus_tree
+# 	country = {
+# 		factor = 0
+# 	}
+# 	#
+# 	focus = {
+# 		id = SYR_victory_civil_war
+# 		icon = GFX_victory_in_the_civil_war
+# 		x = 12
+# 		y = 0
+# 		cost = 1
+# 		available = {
+# 			NOT = {
+# 				country_exists = HTS
+# 			}
+# 		}
+# 		available_if_capitulated = yes
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			add_political_power = 150
+# 			add_stability = 0.08
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_increase_ssnp_propaganda
+# 		icon = GFX_increase_ssnp_propaganda
+# 		x = 18
+# 		y = 1
+# 		cost = 10
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_victory_civil_war
+# 		}
+# 		mutually_exclusive = {
+# 			focus = SYR_celebrate_bashar_al_assad
+# 		}
+# 		mutually_exclusive = {
+# 			focus = SYR_black_day
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			custom_effect_tooltip = SYR_parliment_tt
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_ssnp_military_integration
+# 		icon = GFX_goal_unknown
+# 		x = 18
+# 		y = 2
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_increase_ssnp_propaganda
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			custom_effect_tooltip = SYR_army_professionalism_increase_small
+# 			add_to_variable = {
+# 				SYR_army = 3
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_eagles_of_whirlwind_expansion
+# 		icon = GFX_goal_unknown
+# 		x = 20
+# 		y = 3
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_ssnp_military_integration
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			random_owned_controlled_state = {
+# 				create_unit = {
+# 					division = "name = \"3 Milishia SSNP\" division_template = \"Liwa Almilishia\"  start_experience_factor = 0.1"
+# 					allow_spawning_on_enemy_provs = yes
+# 					owner = SYR
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_ssnp_party_integration
+# 		icon = GFX_goal_unknown
+# 		x = 18
+# 		y = 3
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_ssnp_military_integration
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			custom_effect_tooltip = SYR_parliment_more_tt
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_ssnp_coup
+# 		icon = GFX_goal_unknown
+# 		x = 17
+# 		y = 4
+# 		cost = 7.2
+# 		available = {
+# 			has_stability < 0.15
+# 		}
+# 		available_if_capitulated = yes
+# 		mutually_exclusive = {
+# 			focus = SYR_assad_accepts_ssnp_proposal
+# 		}
+# 		prerequisite = {
+# 			focus = SYR_ssnp_party_integration
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			set_politics = {
+# 				ruling_party = nationalist
+# 				elections_allowed = no
+# 				last_election = "1999.12.17"
+# 				election_frequency = 48
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_assad_accepts_ssnp_proposal
+# 		icon = GFX_goal_unknown
+# 		x = 19
+# 		y = 4
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		mutually_exclusive = {
+# 			focus = SYR_ssnp_coup
+# 		}
+# 		prerequisite = {
+# 			focus = SYR_ssnp_party_integration
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			set_politics = {
+# 				ruling_party = nationalist
+# 				elections_allowed = no
+# 				last_election = "1999.12.17"
+# 				election_frequency = 48
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_restructure_the_state
+# 		icon = GFX_goal_unknown
+# 		x = 15
+# 		y = 5
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_ssnp_coup
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_solidify_the_cult_of_saadeh
+# 		icon = GFX_goal_unknown
+# 		x = 15
+# 		y = 6
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_restructure_the_state
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			add_ideas = SYR_cult_of_saddeh_idea
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_we_are_all_syrian
+# 		icon = GFX_goal_unknown
+# 		x = 15
+# 		y = 7
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_solidify_the_cult_of_saadeh
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_our_hellenistic_past
+# 		icon = GFX_goal_unknown
+# 		x = 13
+# 		y = 8
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_we_are_all_syrian
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_unify_the_religions
+# 		icon = GFX_goal_unknown
+# 		x = 15
+# 		y = 8
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_we_are_all_syrian
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			remove_ideas = islamic_sectarian_conflicts
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_honor_the_martyrs
+# 		icon = GFX_goal_unknown
+# 		x = 15
+# 		y = 9
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_unify_the_religions
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_colossal_administration
+# 		icon = GFX_goal_unknown
+# 		x = 15
+# 		y = 10
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_honor_the_martyrs
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			remove_ideas = islamic_sectarian_conflicts
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_an_organic_economy
+# 		icon = GFX_goal_unknown
+# 		x = 17
+# 		y = 5
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_ssnp_coup
+# 			focus = SYR_assad_accepts_ssnp_proposal
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			remove_ideas = SYR_failing_curency
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_corporatist_reforms
+# 		icon = GFX_goal_unknown
+# 		x = 17
+# 		y = 6
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_an_organic_economy
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			add_ideas = non_political_unions
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_nationalize_major_corporations
+# 		icon = GFX_goal_unknown
+# 		x = 17
+# 		y = 7
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_corporatist_reforms
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			random_owned_state = {
+# 				if = {
+# 					limit = {
+# 						free_building_slots = {
+# 							building = industrial_complex
+# 							size > 2
+# 							include_locked = yes
+# 						}
+# 						free_building_slots = {
+# 							building = arms_factory
+# 							size > 1
+# 							include_locked = yes
+# 						}
+# 					}
+# 					add_extra_state_shared_building_slots = 3
+# 					add_building_construction = {
+# 						type = industrial_complex
+# 						level = 2
+# 						instant_build = yes
+# 					}
+# 					add_building_construction = {
+# 						type = arms_factory
+# 						level = 1
+# 						instant_build = yes
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_socialist_nationalism
+# 		icon = GFX_goal_unknown
+# 		x = 17
+# 		y = 8
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_nationalize_major_corporations
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_middle_eastern_superpower
+# 		icon = GFX_goal_unknown
+# 		x = 17
+# 		y = 9
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_socialist_nationalism
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			add_ideas = medium_poverty
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_toward_a_greater_syria
+# 		icon = GFX_goal_unknown
+# 		x = 19
+# 		y = 5
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_ssnp_coup
+# 			focus = SYR_assad_accepts_ssnp_proposal
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			set_cosmetic_tag = GREATER_SYRIA
+# 			add_ideas = SYR_greater_syria_1
+# 			create_wargoal = {
+# 				type = annex_everything
+# 				target = ROJ
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_false_state_of_lebanon
+# 		icon = GFX_goal_unknown
+# 		x = 19
+# 		y = 6
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_toward_a_greater_syria
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			create_wargoal = {
+# 				type = annex_everything
+# 				target = LEB
+# 			}
+# 			create_wargoal = {
+# 				type = annex_everything
+# 				target = HEZ
+# 			}
+# 			add_state_claim = 553
+# 			add_state_claim = 928
+# 			add_state_claim = 929
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_liberate_jordan
+# 		icon = GFX_goal_unknown
+# 		x = 19
+# 		y = 7
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_false_state_of_lebanon
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			create_wargoal = {
+# 				type = annex_everything
+# 				target = JOR
+# 			}
+# 			add_state_claim = 455
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_destroy_the_jewish_tumor
+# 		icon = GFX_goal_unknown
+# 		x = 19
+# 		y = 8
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_liberate_jordan
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_orthodox_brothers
+# 		icon = GFX_goal_unknown
+# 		x = 19
+# 		y = 9
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_destroy_the_jewish_tumor
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_natural_syria
+# 		icon = GFX_goal_unknown
+# 		x = 20
+# 		y = 10
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_orthodox_brothers
+# 		}
+# 		prerequisite = {
+# 			focus = SYR_the_canal
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_sea_to_sea
+# 		icon = GFX_goal_unknown
+# 		x = 21
+# 		y = 6
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_toward_a_greater_syria
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			create_wargoal = {
+# 				type = annex_everything
+# 				target = IRQ
+# 			}
+# 			create_wargoal = {
+# 				type = annex_everything
+# 				target = KUR
+# 			}
+# 			add_state_claim = 675
+# 			add_state_claim = 676
+# 			add_state_claim = 815
+# 			add_state_claim = 291
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_iranian_occupation
+# 		icon = GFX_goal_unknown
+# 		x = 21
+# 		y = 7
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_sea_to_sea
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_banish_the_turks
+# 		icon = GFX_goal_unknown
+# 		x = 21
+# 		y = 8
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_iranian_occupation
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			create_wargoal = {
+# 				type = take_state_focus
+# 				target = TUR
+# 				generator = {
+# 					1031
+# 					1035
+# 					827
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_the_canal
+# 		icon = GFX_goal_unknown
+# 		x = 21
+# 		y = 9
+# 		cost = 7.2
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_banish_the_turks
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_black_day
+# 		icon = GFX_goal_unknown
+# 		x = 26
+# 		y = 1
+# 		cost = 10
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_victory_civil_war
+# 		}
+# 		mutually_exclusive = {
+# 			focus = SYR_celebrate_bashar_al_assad
+# 		}
+# 		mutually_exclusive = {
+# 			focus = SYR_increase_ssnp_propaganda
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			country_event = {
+# 				id = syria.8
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_rally_the_shajids
+# 		icon = GFX_goal_unknown
+# 		x = 25
+# 		y = 2
+# 		cost = 3
+# 		available = {
+# 			tag = ISS
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_black_day
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			random_owned_controlled_state = {
+# 				create_unit = {
+# 					division = "name = \"1. Mushat Alshrye\" division_template = \"Mushat Alshrye\"  start_experience_factor = 0.0"
+# 					allow_spawning_on_enemy_provs = yes
+# 					owner = ISS
+# 				}
+# 				create_unit = {
+# 					division = "name = \"2. Mushat Alshrye\" division_template = \"Mushat Alshrye\"  start_experience_factor = 0.0"
+# 					allow_spawning_on_enemy_provs = yes
+# 					owner = ISS
+# 				}
+# 				create_unit = {
+# 					division = "name = \"3. Mushat Alshrye\" division_template = \"Mushat Alshrye\"  start_experience_factor = 0.0"
+# 					allow_spawning_on_enemy_provs = yes
+# 					owner = ISS
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_rapid_strikes
+# 		icon = GFX_goal_unknown
+# 		x = 27
+# 		y = 2
+# 		cost = 5
+# 		available = {
+# 			tag = ISS
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_black_day
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			add_tech_bonus = {
+# 				name = land_doc_bonus
+# 				bonus = 0.75
+# 				uses = 2
+# 				category = cat_asym_warfare
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_aleppo_uprising
+# 		icon = GFX_goal_unknown
+# 		x = 27
+# 		y = 3
+# 		cost = 3
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_rapid_strikes
+# 			focus = SYR_rally_the_shajids
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			1034 = {
+# 				create_unit = {
+# 					division = "name = \"1. Mushat Alshrye\" division_template = \"Mushat Alshrye\"  start_experience_factor = 0.0"
+# 					allow_spawning_on_enemy_provs = yes
+# 					owner = ISS
+# 				}
+# 				create_unit = {
+# 					division = "name = \"2. Shajid Mubayl\" division_template = \"Mushat Alshrye\"  start_experience_factor = 0.0"
+# 					allow_spawning_on_enemy_provs = yes
+# 					owner = ISS
+# 				}
+# 				create_unit = {
+# 					division = "name = \"3. Shajid Mubayl\" division_template = \"Mushat Alshrye\"  start_experience_factor = 0.0"
+# 					allow_spawning_on_enemy_provs = yes
+# 					owner = ISS
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_damascus_uprising
+# 		icon = GFX_goal_unknown
+# 		x = 25
+# 		y = 3
+# 		cost = 3
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_rapid_strikes
+# 			focus = SYR_rally_the_shajids
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			declare_war_on = {
+# 				target = FSA
+# 				type = annex_everything
+# 			}
+# 			1032 = {
+# 				create_unit = {
+# 					division = "name = \"1. Shajid Mubayl\" division_template = \"Mushat Alshrye\"  start_experience_factor = 0.0"
+# 					allow_spawning_on_enemy_provs = yes
+# 					owner = ISS
+# 				}
+# 				create_unit = {
+# 					division = "name = \"2. Mushat Alshrye\" division_template = \"Mushat Alshrye\"  start_experience_factor = 0.0"
+# 					allow_spawning_on_enemy_provs = yes
+# 					owner = ISS
+# 				}
+# 				create_unit = {
+# 					division = "name = \"3. Mushat Alshrye\" division_template = \"Mushat Alshrye\"  start_experience_factor = 0.0"
+# 					allow_spawning_on_enemy_provs = yes
+# 					owner = ISS
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_reproclaim_the_islamic_state
+# 		icon = GFX_goal_unknown
+# 		x = 26
+# 		y = 4
+# 		cost = 10
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_aleppo_uprising
+# 		}
+# 		prerequisite = {
+# 			focus = SYR_damascus_uprising
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			add_tech_bonus = {
+# 				name = land_doc_bonus
+# 				bonus = 0.75
+# 				uses = 2
+# 				category = cat_asym_warfare
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_strike_the_kurds
+# 		icon = GFX_goal_unknown
+# 		x = 26
+# 		y = 5
+# 		cost = 10
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_reproclaim_the_islamic_state
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			create_wargoal = {
+# 				type = annex_everything
+# 				target = ROJ
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_repurpose_syrian_equipment
+# 		icon = GFX_goal_unknown
+# 		x = 24
+# 		y = 5
+# 		cost = 10
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_reproclaim_the_islamic_state
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_recruit_syrian_officers
+# 		icon = GFX_goal_unknown
+# 		x = 24
+# 		y = 6
+# 		cost = 10
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_repurpose_syrian_equipment
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_tear_down_churches
+# 		icon = GFX_goal_unknown
+# 		x = 28
+# 		y = 5
+# 		cost = 10
+# 		available = {
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_reproclaim_the_islamic_state
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			remove_ideas = islamic_sectarian_conflicts
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_celebrate_bashar_al_assad
+# 		icon = GFX_celebrate_assad
+# 		x = 12
+# 		y = 1
+# 		cost = 5
+# 		available = {
+# 			NOT = {
+# 				country_exists = HTS
+# 			}
+# 		}
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_victory_civil_war
+# 		}
+# 		mutually_exclusive = {
+# 			focus = SYR_black_day
+# 		}
+# 		mutually_exclusive = {
+# 			focus = SYR_increase_ssnp_propaganda
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			add_political_power = 150
+# 			add_stability = 0.08
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_repair_economy
+# 		icon = GFX_goal_unknown
+# 		x = 5
+# 		y = 2
+# 		cost = 10
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_victory_civil_war
+# 		}
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+# 		completion_reward = {
+# 			custom_effect_tooltip = SYR_economy_tt
+# 			swap_ideas = {
+# 				remove_idea = SYR_devistated_economy
+# 				add_idea = SYR_devistated_economy_2
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_syrian_territorial_integrity
+# 		icon = GFX_goal_unknown
+# 		x = 12
+# 		y = 2
+# 		cost = 10
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_celebrate_bashar_al_assad
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			add_political_power = 50
+# 			add_stability = 0.05
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_rojava_independence_referendum
+# 		icon = GFX_goal_unknown
+# 		x = 10
+# 		y = 3
+# 		cost = 10
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_syrian_territorial_integrity
+# 		}
+# 		mutually_exclusive = {
+# 			focus = SYR_demand_return_of_syrian_land
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			add_political_power = 50
+# 			add_stability = 0.05
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_common_enemy
+# 		icon = GFX_goal_unknown
+# 		x = 10
+# 		y = 4
+# 		cost = 10
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_rojava_independence_referendum
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			SYR = {
+# 				diplomatic_relation = {
+# 					country = ROJ
+# 					relation = guarantee
+# 					active = yes
+# 				}
+# 			}
+# 			ROJ = {
+# 				random_owned_state = {
+# 					if = {
+# 						limit = {
+# 							free_building_slots = {
+# 								building = industrial_complex
+# 								size > 1
+# 								include_locked = yes
+# 							}
+# 							free_building_slots = {
+# 								building = arms_factory
+# 								size > 1
+# 								include_locked = yes
+# 							}
+# 						}
+# 						add_extra_state_shared_building_slots = 2
+# 						add_building_construction = {
+# 							type = industrial_complex
+# 							level = 1
+# 							instant_build = yes
+# 						}
+# 						add_building_construction = {
+# 							type = arms_factory
+# 							level = 1
+# 							instant_build = yes
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_demand_return_of_syrian_land
+# 		icon = GFX_goal_unknown
+# 		x = 12
+# 		y = 3
+# 		cost = 10
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_syrian_territorial_integrity
+# 		}
+# 		mutually_exclusive = {
+# 			focus = SYR_rojava_independence_referendum
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			ROJ = {
+# 				country_event = {
+# 					id = syria.11
+# 					days = 2
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_revive_deir_az_zur_oilfields
+# 		icon = GFX_Generic_Oil_Production
+# 		x = 12
+# 		y = 4
+# 		cost = 10
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_demand_return_of_syrian_land
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			if = {
+# 				limit = {
+# 					1034 = {
+# 						owner = {
+# 							tag = SYR
+# 						}
+# 					}
+# 				}
+# 				1034 = {
+# 					if = {
+# 						limit = {
+# 							free_building_slots = {
+# 								building = fuel_silo
+# 								size > 1
+# 								include_locked = yes
+# 							}
+# 							free_building_slots = {
+# 								building = synthetic_refinery
+# 								size > 1
+# 								include_locked = yes
+# 							}
+# 						}
+# 						add_extra_state_shared_building_slots = 2
+# 						add_building_construction = {
+# 							type = fuel_silo
+# 							level = 1
+# 							instant_build = yes
+# 						}
+# 						add_building_construction = {
+# 							type = synthetic_refinery
+# 							level = 1
+# 							instant_build = yes
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_protest_turkish_occupation
+# 		icon = GFX_goal_unknown
+# 		x = 14
+# 		y = 3
+# 		cost = 10
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_syrian_territorial_integrity
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			add_political_power = 50
+# 			add_stability = 0.05
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_defend_northern_border
+# 		icon = GFX_goal_unknown
+# 		x = 14
+# 		y = 4
+# 		cost = 10
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_protest_turkish_occupation
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			add_political_power = 50
+# 			add_stability = 0.05
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_rebuild_cities_focus
+# 		icon = GFX_goal_unknown
+# 		x = 8
+# 		y = 3
+# 		cost = 10
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_repair_economy
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			custom_effect_tooltip = SYR_build_up_economy
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_rebuild_Industry
+# 		icon = GFX_goal_unknown
+# 		x = 2
+# 		y = 3
+# 		cost = 10
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_repair_economy
+# 		}
+# 		ai_will_do = {
+# 			factor = 10
+# 		}
+# 		completion_reward = {
+# 			add_ideas = medium_industry
+# 			random_owned_state = {
+# 				if = {
+# 					limit = {
+# 						free_building_slots = {
+# 							building = industrial_complex
+# 							size > 2
+# 							include_locked = yes
+# 						}
+# 					}
+# 					add_extra_state_shared_building_slots = 2
+# 					add_building_construction = {
+# 						type = industrial_complex
+# 						level = 2
+# 						instant_build = yes
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_rebuild_schools
+# 		icon = GFX_goal_unknown
+# 		x = 5
+# 		y = 3
+# 		cost = 10
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_repair_economy
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			add_political_power = 50
+# 			add_stability = 0.05
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_tackle_economic_sanctions
+# 		icon = GFX_goal_unknown
+# 		x = 1
+# 		y = 4
+# 		cost = 10
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_rebuild_Industry
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			custom_effect_tooltip = SYR_economy_debt_tt
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_dependable_trade_partners
+# 		icon = GFX_goal_unknown
+# 		x = 2
+# 		y = 5
+# 		cost = 10
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_tackle_economic_sanctions
+# 			focus = SYR_revive_tourism_industry
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_revive_tourism_industry
+# 		icon = GFX_goal_unknown
+# 		x = 3
+# 		y = 4
+# 		cost = 10
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_rebuild_Industry
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			add_political_power = 50
+# 			add_stability = 0.05
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_state_of_army
+# 		icon = GFX_state_of_the_army
+# 		x = 37
+# 		y = 0
+# 		cost = 7.2
+# 		available_if_capitulated = yes
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			army_experience = 10
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_review_idlib_offensive
+# 		icon = GFX_goal_unknown
+# 		x = 32
+# 		y = 1
+# 		cost = 7.2
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_state_of_army
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			add_tech_bonus = {
+# 				name = land_doc_bonus
+# 				bonus = 0.75
+# 				uses = 1
+# 				category = cat_old_land_doctrine
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_rebuild_artillery_school
+# 		icon = GFX_goal_unknown
+# 		x = 31
+# 		y = 2
+# 		cost = 10
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_review_idlib_offensive
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			custom_effect_tooltip = SYR_army_professionalism_increase_small
+# 			add_to_variable = {
+# 				SYR_army = 3
+# 			}
+# 			add_research_slot = 1
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_defense_companies
+# 		icon = GFX_goal_unknown
+# 		x = 33
+# 		y = 2
+# 		cost = 7.2
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_review_idlib_offensive
+# 		}
+# 		mutually_exclusive = {
+# 			focus = SYR_purchase_russian_equipment
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			if = {
+# 				limit = {
+# 					1034 = {
+# 						owner = {
+# 							tag = SYR
+# 						}
+# 					}
+# 				}
+# 				1034 = {
+# 					if = {
+# 						limit = {
+# 							free_building_slots = {
+# 								building = arms_factory
+# 								size > 2
+# 								include_locked = yes
+# 							}
+# 						}
+# 						add_extra_state_shared_building_slots = 2
+# 						add_building_construction = {
+# 							type = arms_factory
+# 							level = 2
+# 							instant_build = yes
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_invite_iranian_advisors
+# 		icon = GFX_goal_unknown
+# 		x = 41
+# 		y = 1
+# 		cost = 7.2
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_state_of_army
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			PER = {
+# 				add_opinion_modifier = {
+# 					target = SYR
+# 					modifier = has_expressed_loyalty
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_invite_russian_advisors
+# 		icon = GFX_goal_unknown
+# 		x = 37
+# 		y = 1
+# 		cost = 7.2
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_state_of_army
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			swap_ideas = {
+# 				remove_idea = SYR_inexperienced_generals
+# 				add_idea = SYR_russian_trained_officers
+# 			}
+# 			SOV = {
+# 				add_opinion_modifier = {
+# 					target = SYR
+# 					modifier = has_expressed_loyalty
+# 				}
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_purchase_russian_equipment
+# 		icon = GFX_focus_Generic_Russian_Guns
+# 		x = 37
+# 		y = 2
+# 		cost = 7.2
+# 		available_if_capitulated = yes
+# 		available = {
+# 			custom_trigger_tooltip = {
+# 				tooltip = PRC_has_15mil
+# 			}
+# 			check_variable = {
+# 				var = income_var
+# 				value = 15
+# 			}
+# 		}
+# 		prerequisite = {
+# 			focus = SYR_invite_russian_advisors
+# 		}
+# 		mutually_exclusive = {
+# 			focus = SYR_defense_companies
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			custom_effect_tooltip = PRC_spend_15mil
+# 			subtract_from_variable = {
+# 				var = income_var
+# 				value = 15
+# 			}
+# 			add_equipment_to_stockpile = {
+# 				type = infantry_equipment_2
+# 				amount = 2000
+# 				producer = SOV
+# 			}
+# 			add_equipment_to_stockpile = {
+# 				type = support_equipment
+# 				amount = 200
+# 				producer = SOV
+# 			}
+# 			add_equipment_to_stockpile = {
+# 				type = motorized_equipment_1
+# 				amount = 250
+# 				producer = SOV
+# 			}
+# 			add_equipment_to_stockpile = {
+# 				type = anti_tank_equipment_1
+# 				amount = 100
+# 				producer = SOV
+# 			}
+# 			add_equipment_to_stockpile = {
+# 				type = anti_air_equipment_1
+# 				amount = 100
+# 				producer = SOV
+# 			}
+# 			add_equipment_to_stockpile = {
+# 				type = modern_tank_equipment
+# 				amount = 50
+# 				producer = SOV
+# 			}
+# 			add_equipment_to_stockpile = {
+# 				type = mechanized_equipment
+# 				amount = 50
+# 				producer = SOV
+# 			}
+# 			add_equipment_to_stockpile = {
+# 				type = light_mechanized
+# 				amount = 50
+# 				producer = SOV
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_reorganize_tiger_forces
+# 		icon = GFX_goal_unknown
+# 		x = 36
+# 		y = 3
+# 		cost = 7.2
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_purchase_russian_equipment
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			custom_effect_tooltip = SYR_army_professionalism_increase_large
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_russian_trained_militias
+# 		icon = GFX_goal_unknown
+# 		x = 38
+# 		y = 3
+# 		cost = 7.2
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_purchase_russian_equipment
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			custom_effect_tooltip = SYR_army_professionalism_increase_large
+# 			add_to_variable = {
+# 				SYR_army = 5
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_disband_militias
+# 		icon = GFX_goal_unknown
+# 		x = 34
+# 		y = 3
+# 		cost = 7.2
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_defense_companies
+# 		}
+# 		mutually_exclusive = {
+# 			focus = SYR_fund_more_militias
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			custom_effect_tooltip = SYR_army_professionalism_increase_small
+# 			subtract_from_variable = {
+# 				SYR_army = -3
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_fund_more_militias
+# 		icon = GFX_goal_unknown
+# 		x = 32
+# 		y = 3
+# 		cost = 7.2
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_defense_companies
+# 		}
+# 		mutually_exclusive = {
+# 			focus = SYR_disband_militias
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			custom_effect_tooltip = SYR_army_professionalism_decrease_large
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_recruit_sunni_officers
+# 		icon = GFX_goal_unknown
+# 		x = 32
+# 		y = 4
+# 		cost = 7.2
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_fund_more_militias
+# 			focus = SYR_disband_militias
+# 		}
+# 		mutually_exclusive = {
+# 			focus = SYR_maintain_alawite_dominance
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			remove_ideas = SYR_alawite_dominated_army
+# 			custom_effect_tooltip = SYR_army_professionalism_decrease_small
+# 			custom_effect_tooltip = SYR_officer_decisions
+# 			add_to_variable = {
+# 				SYR_army = -3
+# 			}
+# 		}
+# 	}
+# 	focus = {
+# 		id = SYR_maintain_alawite_dominance
+# 		icon = GFX_goal_unknown
+# 		x = 34
+# 		y = 4
+# 		cost = 7.2
+# 		available_if_capitulated = yes
+# 		prerequisite = {
+# 			focus = SYR_fund_more_militias
+# 			focus = SYR_disband_militias
+# 		}
+# 		mutually_exclusive = {
+# 			focus = SYR_recruit_sunni_officers
+# 		}
+# 		ai_will_do = {
+# 			factor = 1
+# 		}
+# 		completion_reward = {
+# 			swap_ideas = {
+# 				remove_idea = SYR_alawite_dominated_army
+# 				add_idea = SYR_alawite_dominated_army_2
+# 			}
+# 			custom_effect_tooltip = SYR_army_professionalism_increase_small
+# 			add_to_variable = {
+# 				SYR_army = 3
+# 			}
+# 		}
+# 	}
+# }

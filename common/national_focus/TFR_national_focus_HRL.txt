@@ -1,0 +1,1900 @@
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_POLITICAL}
+focus_tree = {
+	id = libya_focus
+	country = {
+		factor = 0
+	}
+	#Focus for Reaffirm Golan
+	focus = {
+		id = SYR_reaffirmgolan
+		icon = GFX_goal_generic_forceful_treaty
+		x = 45
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_theoldentente
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Libyan National Army
+	focus = {
+		id = HRL_libyan_national_army
+		icon = GFX_focus_HRL_Libyan_national_Army
+		x = 5
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 6
+		}
+		completion_reward = {
+			army_experience = 15
+		}
+	}
+	#Focus for Iranian Advisors
+	focus = {
+		id = HRL_iranian_advisors
+		icon = GFX_focus_HRL_invite_iranian_advisors
+		x = 6
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_libyan_national_army
+		}
+		mutually_exclusive = {
+			focus = HRL_invite_russian_advisors
+		}
+		ai_will_do = {
+			factor = 6
+		}
+		completion_reward = {
+			add_ideas = HRL_iranian_advisors
+		}
+	}
+	#Focus for Invite Russian Advisors
+	focus = {
+		id = HRL_invite_russian_advisors
+		icon = GFX_focus_HRL_invite_russian_advisors
+		x = 8
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_libyan_national_army
+		}
+		mutually_exclusive = {
+			focus = HRL_iranian_advisors
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			add_ideas = HRL_russian_advisors
+		}
+	}
+	#Focus for Purchase Surplus Equipment
+	focus = {
+		id = HRL_purchase_surplus_equipment
+		icon = GFX_focus_HRL_Purchase_Surplus_Rifles
+		x = 7
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_iranian_advisors
+			focus = HRL_invite_russian_advisors
+		}
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = anti_tank_equipment
+				amount = 100
+				producer = SV1
+			}
+			add_equipment_to_stockpile = {
+				type = anti_air_equipment
+				amount = 110
+				producer = SV1
+			}
+		}
+	}
+	#Focus for Russian Special Forces Training
+	focus = {
+		id = HRL_russian_spec_ops_training
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		x = 8
+		y = 4
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_purchase_surplus_equipment
+		}
+		mutually_exclusive = {
+			focus = HRL_purchase_french_equipment
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Purchase French Equipment
+	focus = {
+		id = HRL_purchase_french_equipment
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		x = 6
+		y = 4
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_purchase_surplus_equipment
+		}
+		mutually_exclusive = {
+			focus = HRL_russian_spec_ops_training
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 150
+				producer = FRA
+			}
+		}
+	}
+	#Focus for Purchase Surplus Aks
+	focus = {
+		id = HRL_purchase_surplus_aks
+		icon = GFX_purchasesoviettanks
+		x = 6
+		y = 5
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_purchase_french_equipment
+			focus = HRL_russian_spec_ops_training
+		}
+		mutually_exclusive = {
+			focus = HRL_purchase_t72
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_3
+				amount = 750
+				producer = SV1
+			}
+		}
+	}
+	#Focus for Purchase T-72s
+	focus = {
+		id = HRL_purchase_t72
+		icon = GFX_purchasesurplussovietequipment
+		x = 8
+		y = 5
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_russian_spec_ops_training
+			focus = HRL_purchase_french_equipment
+		}
+		mutually_exclusive = {
+			focus = HRL_purchase_surplus_aks
+		}
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = modern_tank_equipment_2
+				amount = 250
+				producer = SV1
+			}
+		}
+	}
+	#Focus for Purchase BMP-2
+	focus = {
+		id = HRL_purchase_bmp2
+		icon = GFX_purchasesurplussovietequipment
+		x = 6
+		y = 6
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_purchase_t72
+			focus = HRL_purchase_surplus_aks
+		}
+		mutually_exclusive = {
+			focus = HRL_purchase_s400
+		}
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = mechanized_equipment_2
+				amount = 250
+				producer = SOV
+			}
+		}
+	}
+	#Focus for Purchase S400
+	focus = {
+		id = HRL_purchase_s400
+		icon = GFX_focus_HRL_purchase_s400
+		x = 8
+		y = 6
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_purchase_surplus_aks
+			focus = HRL_purchase_t72
+		}
+		mutually_exclusive = {
+			focus = HRL_purchase_bmp2
+		}
+		ai_will_do = {
+			factor = 3
+		}
+	}
+	#Focus for Egyptian Support
+	focus = {
+		id = HRL_egyptian_support
+		icon = GFX_focus_HRL_request_egyptian_support
+		x = 1
+		y = 1
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_libyan_national_army
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	#Focus for Recruit Nationalist Militias
+	focus = {
+		id = HRL_recruit_gaddafi_militias
+		icon = GFX_goal_generic_small_arms
+		x = 3
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_iranian_advisors
+		}
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
+		ai_will_do = {
+			factor = 6
+		}
+		completion_reward = {
+			add_manpower = 5000
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"1.Aljabhat Alshaebiat Litahrir Libia\" division_template = \"Liwa Milishia\"  start_experience_factor = 0.0"
+					allow_spawning_on_enemy_provs = yes
+					owner = HRL
+				}
+				create_unit = {
+					division = "name = \"2. Aljabhat Alshaebiat Litahrir Libia\" division_template = \"Liwa Milishia\"  start_experience_factor = 0.0"
+					allow_spawning_on_enemy_provs = yes
+					owner = HRL
+				}
+			}
+		}
+	}
+	#Focus for Libyan Officer School
+	focus = {
+		id = HRL_officer_school
+		icon = GFX_focus_HRL_officer_college
+		x = 2
+		y = 3
+		cost = 7.2
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_egyptian_support
+			focus = HRL_recruit_gaddafi_militias
+		}
+		ai_will_do = {
+			factor = 7
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	#Focus for Mechanization Effort
+	focus = {
+		id = HRL_mechanization_effort
+		icon = GFX_goal_generic_army_motorized
+		x = 5
+		y = 3
+		cost = 7.2
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_iranian_advisors
+			focus = HRL_purchase_surplus_equipment
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = light_mech_bonus
+				bonus = 1
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+	#Focus for Artillery Gunnery School
+	focus = {
+		id = HRL_artillery_school
+		icon = GFX_goal_generic_army_motorized
+		x = 0
+		y = 2
+		cost = 7.2
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_egyptian_support
+		}
+		ai_will_do = {
+			factor = 6
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 0.75
+				uses = 2
+				category = artillery
+			}
+		}
+	}
+	#Focus for Joint Military Commission
+	focus = {
+		id = HRL_joint_military_commission
+		icon = GFX_focus_HRL_Libyan_national_Army
+		x = 52
+		y = 0
+		cost = 3.6
+		available_if_capitulated = yes
+		mutually_exclusive = {
+			focus = HRL_delay_elections
+		}
+		ai_will_do = {
+			factor = 8
+		}
+		completion_reward = {
+			add_political_power = -75
+			add_stability = -0.05
+		}
+	}
+	#Focus for Peaceful Reunification
+	focus = {
+		id = HRL_peaceful_unification
+		icon = GFX_focus_HRL_Libyan_national_Army
+		x = 55
+		y = 1
+		cost = 3.6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_joint_military_commission
+		}
+		ai_will_do = {
+			factor = 8
+		}
+		completion_reward = {
+			add_political_power = -75
+			add_stability = -0.05
+		}
+	}
+	#Focus for Hold the Elections
+	focus = {
+		id = HRL_hold_elections
+		icon = GFX_focus_HRL_Libyan_national_Army
+		x = 49
+		y = 1
+		cost = 3.6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_joint_military_commission
+		}
+		ai_will_do = {
+			factor = 8
+		}
+		completion_reward = {
+			add_political_power = -75
+			add_stability = -0.05
+		}
+	}
+	#Focus for Combine the Armed Forces
+	focus = {
+		id = HRL_combine_the_armed_forces
+		icon = GFX_focus_HRL_Libyan_national_Army
+		x = 54
+		y = 2
+		cost = 3.6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_peaceful_unification
+		}
+		ai_will_do = {
+			factor = 8
+		}
+		completion_reward = {
+			add_political_power = -75
+			add_stability = -0.05
+		}
+	}
+	#Focus for Delay the Elections
+	focus = {
+		id = HRL_delay_elections
+		icon = GFX_Elections_Banned
+		x = 37
+		y = 0
+		cost = 3.6
+		available_if_capitulated = yes
+		mutually_exclusive = {
+			focus = HRL_joint_military_commission
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_political_power = -75
+			add_stability = -0.05
+		}
+	}
+	#Focus for Side with the Gaddafists
+	focus = {
+		id = HRL_side_with_gaddafists
+		icon = GFX_newarabfrontier
+		x = 31
+		y = 1
+		cost = 2.2
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_delay_elections
+		}
+		mutually_exclusive = {
+			focus = SYR_theoldentente
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = nationalist
+				popularity = 0.05
+			}
+			add_political_power = 75
+		}
+	}
+	#Focus for Promote the Green Book
+	focus = {
+		id = HRL_promote_green_book
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 30
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_side_with_gaddafists
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			add_ideas = HRL_green_book
+		}
+	}
+	#Focus for Promise a Return to Order
+	focus = {
+		id = HRL_promise_order
+		icon = GFX_reachouttoyugoslavia
+		x = 32
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_side_with_gaddafists
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			remove_ideas = HRL_lawless_desert
+			add_stability = 0.07
+		}
+	}
+	#Focus for Support the Family
+	focus = {
+		id = HRL_support_family
+		icon = GFX_focus_HRL_Support_the_family
+		x = 31
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_promote_green_book
+			focus = HRL_promise_order
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = HRL_family_welfare
+				days = 150
+			}
+		}
+	}
+	#Focus for Support the Student
+	focus = {
+		id = HRL_support_student
+		icon = GFX_focus_HRL_Support_the_students
+		x = 29
+		y = 3
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_promote_green_book
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = HRL_free_college
+				days = 150
+			}
+		}
+	}
+	#Focus for Support the Worker
+	focus = {
+		id = HRL_support_worker
+		icon = GFX_focus_HRL_Support_the_worker
+		x = 33
+		y = 3
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_promise_order
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = HRL_woker_insentives
+				days = 150
+			}
+		}
+	}
+	#Focus for Outlaw Slavery
+	focus = {
+		id = HRL_outlaw_slavery
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 35
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_promise_order
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	#Focus for Crack Down on Islamists
+	focus = {
+		id = HRL_crack_down_islamists
+		icon = GFX_focus_HRL_crack_down_islamists
+		x = 31
+		y = 6
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_restore_the_Jamahiriya
+		}
+		ai_will_do = {
+			factor = 4
+		}
+	}
+	#Focus for Restore the Jamahiriya
+	focus = {
+		id = HRL_restore_the_Jamahiriya
+		icon = GFX_focus_HRL_restore_the_Jamahiriya
+		x = 31
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_support_family
+			focus = HRL_support_worker
+			focus = HRL_support_student
+		}
+		ai_will_do = {
+			factor = 4
+		}
+		completion_reward = {
+			remove_ideas = HRL_war_exhaustion
+		}
+	}
+	#Focus for Reintroduce Conscription
+	focus = {
+		id = HRL_reintroduce_conscription
+		icon = GFX_goal_generic_army_doctrines
+		x = 30
+		y = 5
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_restore_the_Jamahiriya
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = lowest_conscription
+				}
+				add_ideas = lower_conscription
+			}
+			if = {
+				limit = {
+					has_idea = lower_conscription
+				}
+				add_ideas = low_conscription
+			}
+			add_stability = -0.05
+		}
+	}
+	#Focus for Prop-up Libyan Defense Industry
+	focus = {
+		id = HRL_defense_industry
+		icon = industry_military
+		x = 29
+		y = 6
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_reintroduce_conscription
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				if = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	#Focus for Ready the Armed Forces
+	focus = {
+		id = HRL_ready_armed_forces
+		icon = GFX_goal_generic_army_doctrines
+		x = 30
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_reintroduce_conscription
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = cat_old_land_doctrine
+			}
+		}
+	}
+	#Focus for Arab Supremacy
+	focus = {
+		id = HRL_arab_supremacy
+		icon = GFX_focus_HRL_arab_supremacy
+		x = 32
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_restore_the_Jamahiriya
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Youth Indoctrination
+	focus = {
+		id = HRL_youth_indoctrination
+		icon = military_mission
+		x = 33
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
+		prerequisite = {
+			focus = HRL_arab_supremacy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = HRL_youth_groups
+		}
+	}
+	#Focus for Approach the Egyptians
+	focus = {
+		id = HRL_approach_the_egyptians
+		icon = GFX_arabsupremacy
+		x = 32
+		y = 7
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_arab_supremacy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Prepare for Invasion of Tunisia
+	focus = {
+		id = HRL_prepare_for_tunisian_invasion
+		icon = GFX_focus_HRL_prepare_tunisian_invasion
+		x = 31
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_ready_armed_forces
+			focus = HRL_approach_the_egyptians
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = TUN
+			}
+		}
+	}
+	#Focus for Prepare Defenses Against the West
+	focus = {
+		id = HRL_prepare_against_west
+		icon = GFX_arabsupremacy
+		x = 29
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_prepare_for_tunisian_invasion
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	#Focus for Exploit Tunisian Oil Fields
+	focus = {
+		id = HRL_exploit_oil_fields
+		icon = GFX_Generic_Oil_Production
+		x = 31
+		y = 9
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available = {
+			owns_state = 665
+		}
+		prerequisite = {
+			focus = HRL_prepare_for_tunisian_invasion
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					665 = {
+						owner = {
+							tag = HRL
+						}
+					}
+				}
+				665 = {
+					if = {
+						limit = {
+							free_building_slots = {
+								building = fuel_silo
+								size > 1
+								include_locked = yes
+							}
+							free_building_slots = {
+								building = synthetic_refinery
+								size > 1
+								include_locked = yes
+							}
+						}
+						add_extra_state_shared_building_slots = 2
+						add_building_construction = {
+							type = fuel_silo
+							level = 1
+							instant_build = yes
+						}
+						add_building_construction = {
+							type = synthetic_refinery
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	#Focus for Forceful Indoctrination
+	focus = {
+		id = HRL_forceful_indoctrination
+		icon = GFX_arabsupremacy
+		x = 31
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_exploit_oil_fields
+		}
+		mutually_exclusive = {
+			focus = HRL_limited_autonomy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	#Focus for Grant Limited Autonomy
+	focus = {
+		id = HRL_limited_autonomy
+		icon = GFX_arabsupremacy
+		x = 33
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_prepare_for_tunisian_invasion
+		}
+		mutually_exclusive = {
+			focus = HRL_forceful_indoctrination
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	#Focus for Open Negotiations with Algeria
+	focus = {
+		id = HRL_negotiate_with_algeria_and_morocco
+		icon = GFX_arabsupremacy
+		x = 31
+		y = 11
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_forceful_indoctrination
+			focus = HRL_limited_autonomy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	#Focus for Successful Summit
+	focus = {
+		id = HRL_successful_summit
+		icon = GFX_arabsupremacy
+		x = 29
+		y = 12
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available_if_capitulated = yes
+		mutually_exclusive = {
+			focus = HRL_prepare_for_war
+		}
+		prerequisite = {
+			focus = HRL_negotiate_with_algeria_and_morocco
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	#Focus for Prepare for War
+	focus = {
+		id = HRL_prepare_for_war
+		icon = GFX_arabsupremacy
+		x = 33
+		y = 12
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available_if_capitulated = yes
+		mutually_exclusive = {
+			focus = HRL_successful_summit
+		}
+		prerequisite = {
+			focus = HRL_negotiate_with_algeria_and_morocco
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	#Focus for Glory to the Arab World
+	focus = {
+		id = HRL_glory_to_the_arab_world
+		icon = GFX_arabsupremacy
+		x = 31
+		y = 13
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_prepare_for_war
+			focus = HRL_successful_summit
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_cosmetic_tag = HRL_arab_republic
+			hidden_effect = {
+				set_global_flag = HRL_arab_world_unified
+				sound_effect = TFR_se_arab_world
+			}
+		}
+	}
+	#Focus for The Old Entente
+	focus = {
+		id = SYR_theoldentente
+		icon = GFX_theoldentente
+		x = 43
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_delay_elections
+		}
+		mutually_exclusive = {
+			focus = HRL_side_with_gaddafists
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Industrial Expansion
+	focus = {
+		id = HRL_industrial_expansion
+		icon = GFX_goal_generic_production2
+		x = 74
+		y = 4
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_repair_infrastructure
+		}
+		mutually_exclusive = {
+			focus = HRL_local_industrialization
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = HRL_war_exhaustion
+			random_owned_controlled_state = {
+				if = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	#Focus for Local Industrialization
+	focus = {
+		id = HRL_local_industrialization
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 72
+		y = 4
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_modernizedeirezzur
+		}
+		mutually_exclusive = {
+			focus = HRL_industrial_expansion
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = HRL_war_exhaustion
+			add_ideas = HRL_industrialization_idea
+		}
+	}
+	#Focus for Libyan Air Force
+	focus = {
+		id = HRL_air_force
+		icon = GFX_syrianarabairforce
+		x = 23
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Pilot Training
+	focus = {
+		id = HRL_pilot_training
+		icon = GFX_goal_generic_build_airforce
+		x = 23
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_air_fields
+			focus = SYR_studysovietbombers
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Air Assault Infantry Training
+	focus = {
+		id = HRL_air_assault_infantry
+		icon = GFX_goal_generic_air_fighter2
+		x = 23
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_pilot_training
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Repair Airfields
+	focus = {
+		id = HRL_air_fields
+		icon = GFX_fighterresearch
+		x = 21
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_air_force
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Purchase Russian Fighters
+	focus = {
+		id = HRL_purchase_russian_fighers
+		icon = GFX_multirolefighters
+		x = 19
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_air_fields
+		}
+		mutually_exclusive = {
+			focus = HRL_purchase_chinese_drones
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Purchase Chinese Drones
+	focus = {
+		id = HRL_purchase_chinese_drones
+		icon = GFX_casdevelopment
+		x = 21
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_air_fields
+		}
+		mutually_exclusive = {
+			focus = HRL_purchase_russian_fighers
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Construct Repair Depots
+	focus = {
+		id = HRL_repair_depot
+		icon = GFX_multirolefighterii
+		x = 19
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_purchase_chinese_drones
+			focus = HRL_purchase_russian_fighers
+		}
+		mutually_exclusive = {
+			focus = HRL_purchase_cas_planes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Helicopter Development
+	focus = {
+		id = HRL_purchase_cas_planes
+		icon = GFX_helicopterdevelopment
+		x = 21
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_purchase_russian_fighers
+			focus = HRL_purchase_chinese_drones
+		}
+		mutually_exclusive = {
+			focus = HRL_repair_depot
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Study Soviet Bombers
+	focus = {
+		id = SYR_studysovietbombers
+		icon = GFX_studysovietbombers
+		x = 25
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_air_force
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Desert Infrastructure
+	focus = {
+		id = HRL_desert_infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 76
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_recover_from_civil_war
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Resource Excavation
+	focus = {
+		id = HRL_resource_excavation
+		icon = GFX_goal_generic_construct_civilian
+		x = 76
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_desert_infrastructure
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Resource Exploitation
+	focus = {
+		id = HRL_resource_exploitation
+		icon = GFX_focus_generic_tungsten
+		x = 77
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_resource_excavation
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Oil Excavation
+	focus = {
+		id = HRL_oil_excavation
+		icon = GFX_goal_generic_oil_refinery
+		x = 75
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_resource_excavation
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Oil Refining
+	focus = {
+		id = HRL_oilrefining
+		icon = GFX_goal_unknown
+		x = 76
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_oil_excavation
+		}
+		prerequisite = {
+			focus = HRL_resource_exploitation
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Integrated Economies
+	focus = {
+		id = SYR_integratedeconomies
+		icon = GFX_goal_generic_trade
+		x = 43
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Missions to The Soviet Union
+	focus = {
+		id = SYR_missionstothesovietunion
+		icon = GFX_focus_generic_soviet_politics
+		x = 41
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_theoldentente
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Ba'ath Party Purge
+	focus = {
+		id = SYR_baathpartypurge
+		icon = GFX_baathpartypurge
+		x = 48
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_secularreforms
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for 13th National Congress
+	focus = {
+		id = SYR_13thnationalcongress
+		icon = GFX_13thnationalcongress
+		x = 47
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_baathpartypurge
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Telecom-Research
+	focus = {
+		id = SYR_telecomresearch
+		icon = GFX_goal_generic_radar
+		x = 69
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Modernize Deir ez-Zur
+	focus = {
+		id = SYR_modernizedeirezzur
+		icon = GFX_goal_generic_construction2
+		x = 72
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Begin Recovery from Civil War
+	focus = {
+		id = HRL_recover_from_civil_war
+		icon = GFX_goal_generic_production
+		x = 73
+		y = 0
+		cost = 2
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		available = {
+			NOT = {
+				has_war = yes
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = HRL_civil_war_recovery
+				days = 250
+			}
+		}
+	}
+	#Focus for Repair Tripoli
+	focus = {
+		id = HRL_repair_tripoli
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 73
+		y = 1
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available = {
+			448 = {
+				is_owned_by = HRL
+			}
+		}
+		prerequisite = {
+			focus = HRL_recover_from_civil_war
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				if = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 1
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	#Focus for Repair Civil Infastructure
+	focus = {
+		id = HRL_repair_infrastructure
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 73
+		y = 3
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_repair_tripoli
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			449 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			662 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			661 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#Focus for ICBM Research
+	focus = {
+		id = SYR_icbmresearch
+		icon = GFX_focus_rocketry
+		x = 70
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_telecomresearch
+			focus = SYR_modernizedeirezzur
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Heavy Industrial Expansion
+	focus = {
+		id = SYR_heavyindustrialexpansion
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 40
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_woosaddam
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Libyan Navy
+	focus = {
+		id = HRL_libyan_navy
+		icon = GFX_goal_generic_navy_battleship
+		x = 14
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Build Dockyards
+	focus = {
+		id = HRL_build_dockyards
+		icon = GFX_focus_generic_destroyer
+		x = 13
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_libyan_navy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Destroyer Development
+	focus = {
+		id = SYR_destroyerdevelopment
+		icon = GFX_focus_generic_destroyer
+		x = 10
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_build_dockyards
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Coastal Defenses
+	focus = {
+		id = SYR_coastaldefenses
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 10
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_destroyerdevelopment
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Offensive Capabilities
+	focus = {
+		id = SYR_offensivecapabilities
+		icon = GFX_focus_generic_navy_battleship2
+		x = 15
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = HRL_libyan_navy
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Heavy Mechanization
+	focus = {
+		id = SYR_heavymechanization
+		icon = GFX_focus_generic_army_tanks2
+		x = 41
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_heavyindustrialexpansion
+			focus = SYR_missionstonorthkorea
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Strike First
+	focus = {
+		id = SYR_strikefirst
+		icon = GFX_strikefirst
+		x = 41
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Defensive Doctrine
+	focus = {
+		id = SYR_defensivedoctrine
+		icon = GFX_goal_generic_navy_cruiser
+		x = 13
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Submarine Development
+	focus = {
+		id = SYR_submarinedevelopment
+		icon = GFX_goal_generic_navy_anti_submarine
+		x = 16
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_offensivecapabilities
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Missions to North Korea
+	focus = {
+		id = SYR_missionstonorthkorea
+		icon = GFX_missionstonorthkorea
+		x = 42
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_appeasesadat
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Maritime Patrol Squadrons
+	focus = {
+		id = SYR_maritimepatrolsquadrons
+		icon = GFX_goal_generic_navy_carrier
+		x = 14
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_destroyerdevelopment
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Cruiser Development
+	focus = {
+		id = SYR_cruiserdevelopment
+		icon = GFX_focus_generic_cruiser2
+		x = 14
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_offensivecapabilities
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Recruitment Campaign
+	focus = {
+		id = SYR_recruitmentcampaign
+		icon = GFX_focus_generic_military_academy
+		x = 41
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_heavymechanization
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Diplomatic Mission to Lebanon
+	focus = {
+		id = SYR_diplomaticmissiontolebanon
+		icon = GFX_diplomaticmissiontolebanon
+		x = 49
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Defend Palestine
+	focus = {
+		id = SYR_defendpalestine
+		icon = GFX_defendpalestine
+		x = 44
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_reaffirmgolan
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Interventionist Policies
+	focus = {
+		id = SYR_interventionistpolicies
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 48
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Dry Dock Construction
+	focus = {
+		id = SYR_drydockconstruction
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 12
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_destroyerdevelopment
+			focus = HRL_build_dockyards
+			focus = SYR_cruiserdevelopment
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Expand the Missile Defense Program
+	focus = {
+		id = SYR_expandthemissiledefenseprogram
+		icon = GFX_goal_generic_army_artillery2
+		x = 70
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_icbmresearch
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Invite Western Tech Companies
+	focus = {
+		id = SYR_invitewesterntechcompanies
+		icon = GFX_goal_generic_consumer_goods
+		x = 69
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_telecomresearch
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Aid The PLO
+	focus = {
+		id = SYR_aidtheplo
+		icon = GFX_goal_unknown
+		x = 44
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_defendpalestine
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Secular Reforms
+	focus = {
+		id = SYR_secularreforms
+		icon = GFX_focus_generic_treaty
+		x = 46
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_reaffirmgolan
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Appease Sadat
+	focus = {
+		id = SYR_appeasesadat
+		icon = GFX_goal_unknown
+		x = 42
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_missionstothesovietunion
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#Focus for Woo Saddam
+	focus = {
+		id = SYR_woosaddam
+		icon = GFX_goal_unknown
+		x = 40
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = SYR_missionstothesovietunion
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	#End of focuses 
+}

@@ -1,0 +1,544 @@
+default = {
+	small_plane_airframe_0 = {
+		pool = {
+			icons = { 
+				GFX_light_plane_16_medium
+				GFX_light_plane_15_medium
+				GFX_light_plane_11_medium
+				GFX_light_plane_5_medium
+				GFX_light_plane_7_medium
+				GFX_light_plane_1_medium
+				GFX_light_plane_2_medium
+				GFX_light_plane_3_medium
+				GFX_light_plane_4_medium
+			 }
+		}
+	}
+	
+	small_plane_airframe_1 = {
+		pool = {
+			icons = { 
+				GFX_light_plane_5_medium
+				GFX_light_plane_7_medium
+				GFX_light_plane_1_medium
+				GFX_light_plane_2_medium
+				GFX_light_plane_3_medium
+				GFX_light_plane_4_medium
+				GFX_light_plane_17_medium
+				GFX_light_plane_16_medium
+				GFX_light_plane_15_medium
+				GFX_light_plane_14_medium
+				GFX_light_plane_13_medium
+				GFX_light_plane_12_medium
+				GFX_light_plane_11_medium
+			 }
+		}
+	}
+	small_plane_airframe_2 = {
+		pool = {
+			icons = { 
+				GFX_light_plane_7_medium
+				GFX_light_plane_2_medium
+				GFX_light_plane_17_medium
+				GFX_light_plane_16_medium
+				GFX_light_plane_15_medium
+				GFX_light_plane_14_medium
+				GFX_light_plane_13_medium
+				GFX_light_plane_12_medium
+				GFX_light_plane_11_medium
+				GFX_light_plane_6_medium
+			 }
+		}
+	}
+	small_plane_airframe_3 = {
+		pool = {
+			icons = { 
+				GFX_light_plane_17_medium
+				GFX_light_plane_16_medium
+				GFX_light_plane_13_medium
+				GFX_light_plane_6_medium
+				GFX_light_plane_31_medium
+				GFX_light_plane_32_medium
+				GFX_light_plane_21_medium
+				GFX_light_plane_22_medium
+				GFX_light_plane_23_medium
+				GFX_light_plane_24cv_medium
+			 }
+		}
+	}
+	small_plane_airframe_4 = {
+		pool = {
+			icons = { 
+				GFX_light_plane_21_medium
+				GFX_light_plane_22_medium
+				GFX_light_plane_23_medium
+				GFX_light_plane_34_medium
+				GFX_light_plane_33_medium
+				GFX_light_plane_32_medium
+				GFX_light_plane_31_medium				
+			 }
+		}
+	}
+	small_plane_cas_airframe = {
+		pool = {
+			icons = { 
+				GFX_CAS1_medium
+				GFX_CAS2_medium
+				GFX_CAS3_medium
+				GFX_USA_CAS1_medium
+				GFX_USA_CAS2_medium
+				GFX_USA_CAS3_medium
+				GFX_light_cas_4_medium
+			 }
+		}
+	}	
+	cv_small_plane_airframe_0 = {
+		pool = {
+			icons = { 
+				GFX_light_plane_1_medium
+				GFX_light_plane_2_medium
+				GFX_light_plane_3_medium
+				GFX_light_plane_4_medium
+				GFX_light_plane_5_medium
+				GFX_light_plane_11_medium
+				GFX_light_plane_15_medium
+			 }
+		}
+	}
+	cv_small_plane_airframe_1 = {
+		pool = {
+			icons = { 
+				GFX_light_plane_3_medium
+				GFX_light_plane_4_medium
+				GFX_light_plane_5_medium
+				GFX_light_plane_6_medium
+				GFX_light_plane_11_medium
+				GFX_light_plane_15_medium
+			 }
+		}
+	}
+	cv_small_plane_airframe_2 = {
+		pool = {
+			icons = { 
+				GFX_light_plane_5_medium
+				GFX_light_plane_6_medium
+				GFX_light_plane_11_medium
+				GFX_light_plane_15_medium
+			 }
+		}
+	}
+	cv_small_plane_airframe_3 = {
+		pool = {
+			icons = { 
+				GFX_light_plane_6_medium
+				GFX_light_plane_21_medium
+				GFX_light_plane_22_medium
+				GFX_light_plane_23_medium
+				GFX_light_plane_24cv_medium
+			 }
+		}
+	}
+	cv_small_plane_airframe_4 = {
+		pool = {
+			icons = { 
+
+				GFX_light_plane_21_medium
+				GFX_light_plane_22_medium
+				GFX_light_plane_23_medium
+				GFX_light_plane_24cv_medium
+				GFX_light_plane_34_medium
+				GFX_light_plane_33_medium
+				GFX_light_plane_32_medium
+				GFX_light_plane_31_medium
+			 }
+		}
+	}
+	medium_plane_airframe = {
+		pool = {
+			icons = { 
+				GFX_tactical_bomber1_medium
+				GFX_tactical_bomber2_medium
+				GFX_tactical_bomber3_medium
+				GFX_tactical_bomber4_medium
+				GFX_USA_tactical_bomber4_medium
+				GFX_advanced_medium_airframe_medium
+				GFX_modern_medium_airframe_medium
+			 }
+		}
+	}
+	large_plane_airframe = {
+		pool = {
+			icons = { 
+				GFX_heavy_plane_31_medium
+				GFX_strategic_bomber3_medium
+				GFX_modern_large_airframe_medium
+				GFX_advanced_large_airframe_medium
+				GFX_improved_large_airframe_medium
+				GFX_basic_large_airframe_medium
+				GFX_iw_large_airframe_medium
+			 }
+		}
+	}
+}
+
+SOV = {
+	small_plane_airframe = {
+		pool = {
+			icons = { 
+				GFX_SOV_fighter1_medium
+				GFX_CAS1_medium
+				GFX_light_plane_1_medium
+				GFX_light_plane_8_medium
+			}
+			models = {
+				SOV_light_cas_entity
+				SOV_su_25_entity
+				SOV_CAS_equipment_2_entity
+				SOV_fighter_equipment_1_entity
+			}
+		}
+	}
+	small_plane_airframe_1 = {
+		pool = {
+			icons = { 
+				GFX_SOV_fighter1_medium
+				GFX_SOV_fighter2_medium
+				GFX_SOV_fighter3_medium
+				GFX_SOV_fighter4_medium
+				GFX_SOV_cas1_medium
+				GFX_SOV_cas2_medium
+				GFX_SOV_naval_bomber1_medium
+				GFX_light_plane_8_medium
+			}
+			models = {
+				SOV_light_cas_entity
+				SOV_su_25_entity
+				SOV_CAS_equipment_2_entity
+				SOV_fighter_equipment_2_entity
+				SOV_light_plane_entity
+			}
+		}
+	}
+	small_plane_airframe_2 = {
+		pool = {
+			icons = { 
+				GFX_SOV_fighter4_medium
+				GFX_SOV_fighter5_medium
+				GFX_SOV_fighter6_medium				
+				GFX_SOV_cas2_medium
+				GFX_SOV_naval_bomber1_medium
+				GFX_SOV_naval_bomber2_medium
+			}
+			models = {
+				SOV_light_cas_entity
+				SOV_su_25_entity
+				SOV_CAS_equipment_2_entity
+				SOV_fighter_equipment_3_entity
+				SOV_light_plane_entity
+			}
+		}
+	}
+	small_plane_airframe_3 = {
+		pool = {
+			icons = { 
+				GFX_SOV_fighter7_medium
+				GFX_SOV_fighter8_medium	
+				GFX_light_plane_6_medium
+				GFX_SOV_cas2_medium
+				GFX_SOV_naval_bomber1_medium
+				GFX_SOV_naval_bomber2_medium
+			}
+			models = {
+				SOV_light_cas_entity
+				SOV_su_25_entity
+				SOV_CAS_equipment_2_entity
+				SOV_fighter_equipment_3_entity
+				SOV_fighter_equipment_4_entity
+			}
+		}
+	}
+	small_plane_airframe_4 = {
+		pool = {
+			icons = { 
+				GFX_SOV_fighter7_medium
+				GFX_SOV_fighter8_medium	
+				GFX_light_plane_6_medium
+				GFX_SOV_cas2_medium
+				GFX_SOV_naval_bomber1_medium
+				GFX_SOV_naval_bomber2_medium
+			}
+			models = {
+				SOV_light_cas_entity
+				SOV_su_25_entity
+				SOV_CAS_equipment_2_entity
+				SOV_fighter_equipment_3_entity
+				SOV_fighter_equipment_4_entity
+				SOV_fighter_equipment_6_entity
+			}
+		}
+	}
+}
+
+
+
+PRC = {
+	small_plane_airframe_0 = {
+		pool = {
+			icons = { 
+				GFX_PRC_j7
+				GFX_PRC_j8
+				GFX_PRC_iw_small_airframe_medium
+			}
+			models = {
+				SOV_light_cas_entity
+				SOV_su_25_entity
+				SOV_CAS_equipment_2_entity
+				SOV_fighter_equipment_3_entity
+				SOV_light_plane_entity				
+			}
+		}
+	}
+	small_plane_airframe_1 = {
+		pool = {
+			icons = { 
+				GFX_PRC_basic_small_airframe_medium
+				GFX_PRC_j10
+			}
+			models = {
+				SOV_light_cas_entity
+				SOV_su_25_entity
+				SOV_CAS_equipment_2_entity
+				SOV_fighter_equipment_2_entity
+				SOV_light_plane_entity
+			}
+		}
+	}
+	small_plane_airframe_2 = {
+		pool = {
+			icons = { 
+				GFX_PRC_improved_small_airframe_medium
+				GFX_PRC_Su30MKK
+			}
+			models = {
+				SOV_light_cas_entity
+				SOV_su_25_entity
+				SOV_CAS_equipment_2_entity
+				SOV_fighter_equipment_3_entity
+				SOV_light_plane_entity
+			}
+		}
+	}
+	small_plane_airframe_3 = {
+		pool = {
+			icons = { 
+				GFX_PRC_advanced_small_airframe_medium
+			}
+		}
+	}
+	small_plane_airframe_4 = {
+		pool = {
+			icons = { 
+				GFX_PRC_j_36_eq2
+				GFX_PRC_modern_small_airframe_medium
+			}
+		}
+	}
+	cv_small_plane_airframe_1 = {
+		pool = {
+			icons = { 
+				GFX_PRC_J15_fly_shark
+			}
+		}
+	}
+	cv_small_plane_airframe_2 = {
+		pool = {
+			icons = { 
+				GFX_PRC_J15_fly_shark
+			}
+		}
+	}
+	cv_small_plane_airframe_3 = {
+		pool = {
+			icons = { 
+				GFX_PRC_J15_fly_shark
+			}
+		}
+	}
+	medium_plane_airframe = {
+		pool = {
+			icons = { 
+				GFX_PRC_tactical_bomber1_medium
+				GFX_PRC_tactical_bomber2_medium
+			 }
+		}
+	}
+	cv_small_plane_airframe_2 = {
+		pool = {
+			icons = { 
+				GFX_PRC_tactical_bomber3_medium
+			}
+		}
+	}
+	cv_small_plane_airframe_3 = {
+		pool = {
+			icons = { 
+				GFX_PRC_tactical_bomber4_medium
+			}
+		}
+	}
+	cv_small_plane_airframe_4 = {
+		pool = {
+			icons = { 
+				GFX_PRC_tactical_bomber5_medium
+				GFX_PRC_dark_sword_eq
+			}
+		}
+	}
+}
+
+JAP = {
+	small_plane_airframe_0 = {
+		pool = {
+			icons = { 
+				GFX_JAP_basic_small_airframe_medium
+				GFX_JAP_iw_small_airframe_medium
+			}
+		}
+	}
+	small_plane_airframe_1 = {
+		pool = {
+			icons = { 
+				GFX_JAP_basic_small_airframe_medium
+			}
+		}
+	}
+	small_plane_airframe_2 = {
+		pool = {
+			icons = { 
+				GFX_JAP_improved_small_airframe_medium
+			}
+		}
+	}
+	small_plane_airframe_3 = {
+		pool = {
+			icons = { 
+				GFX_JAP_advanced_small_airframe_medium
+			}
+		}
+	}
+	small_plane_airframe_4 = {
+		pool = {
+			icons = { 
+				GFX_JAP_modern_small_airframe_medium
+			}
+		}
+	}
+}
+
+GER = {
+	small_plane_airframe_0 = {
+		pool = {
+			icons = { 
+				GFX_GER_basic_small_airframe_medium
+				GFX_GER_iw_small_airframe_medium
+			}
+		}
+	}
+	small_plane_airframe_1 = {
+		pool = {
+			icons = { 
+				GFX_GER_basic_small_airframe_medium
+			}
+		}
+	}
+	small_plane_airframe_2 = {
+		pool = {
+			icons = { 
+				GFX_GER_improved_small_airframe_medium
+			}
+		}
+	}
+	small_plane_airframe_3 = {
+		pool = {
+			icons = { 
+				GFX_GER_advanced_small_airframe_medium
+			}
+		}
+	}
+	small_plane_airframe_4 = {
+		pool = {
+			icons = { 
+				GFX_GER_modern_small_airframe_medium
+			}
+		}
+	}
+}
+
+FRA = {
+	small_plane_airframe_0 = {
+		pool = {
+			icons = { 
+				GFX_FRA_basic_small_airframe_medium
+				GFX_FRA_iw_small_airframe_medium
+			}
+		}
+	}
+	small_plane_airframe_1 = {
+		pool = {
+			icons = { 
+				GFX_FRA_basic_small_airframe_medium
+			}
+		}
+	}
+	small_plane_airframe_2 = {
+		pool = {
+			icons = { 
+				GFX_FRA_improved_small_airframe_medium
+			}
+		}
+	}
+	small_plane_airframe_3 = {
+		pool = {
+			icons = { 
+				GFX_FRA_advanced_small_airframe_medium
+			}
+		}
+	}
+	small_plane_airframe_4 = {
+		pool = {
+			icons = { 
+				GFX_FRA_modern_small_airframe_medium
+			}
+		}
+	}
+	cv_small_plane_airframe_1 = {
+		pool = {
+			icons = { 
+				GFX_FRA_basic_small_airframe_medium
+			}
+		}
+	}
+	cv_small_plane_airframe_2 = {
+		pool = {
+			icons = { 
+				GFX_FRA_advanced_small_airframe_medium
+			}
+		}
+	}
+	cv_small_plane_airframe_3 = {
+		pool = {
+			icons = { 
+				GFX_FRA_advanced_small_airframe_medium
+			}
+		}
+	}
+	cv_small_plane_airframe_4 = {
+		pool = {
+			icons = { 
+				GFX_FRA_advanced_small_airframe_medium
+				GFX_FRA_modern_small_airframe_medium
+			}
+		}
+	}
+}
+
